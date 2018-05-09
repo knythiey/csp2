@@ -1,0 +1,42 @@
+/***************************/
+/*  	INITIAL CONFIG    */
+/**************************/
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*************************/
+/*	 	CSS VARIABLES	 */
+/*************************/
+:root {
+	--main-background-color: #dc3545;
+	--navbar-background-color: #343a40;
+}
+
+/*************************/
+/*	 	Main Wrapper	 */
+/*************************/
+
+.main-wrapper {
+	background-color: var(--main-background-color);
+	height: 85vh;
+}
+
+h1 {
+	text-align: center;
+}
+/*************************/
+/*	 	Main Footer 	 */
+/*************************/
+#main-footer {
+	text-align: center;
+	background-color: var(--navbar-background-color);
+	color: white;
+}
+
+
+
+

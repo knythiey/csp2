@@ -1,0 +1,9 @@
+progress sheet:
+
+finished DB design (may 10, 2018)
+finished making files and folder structures of CSP2 (may 10, 2018)
+finished logic of navbar if session has current user or not (may 10, 2018)
+started login page logic(not yet finalized, but working, may11, 2018)
+started register page(may 11, 2018)
+got stuck on registering birthdate input field, createUser.php not finished, pls finish it.
+pushed CSP2 on gitlab branch staging.(may11, 2018 3am)

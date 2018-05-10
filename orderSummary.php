@@ -5,7 +5,7 @@
 	?>
 	<?php 
 	function getTitle(){
-		echo "Transaction Page";
+		echo "Order Summary Page";
 	} 
 ?>
 </head>
@@ -13,7 +13,7 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		
-		<h1> Transaction Page</h1>
+		<h1> Order Summary Page</h1>
 	
 	</div>
 	<?php include "partials/footer.php"; ?>

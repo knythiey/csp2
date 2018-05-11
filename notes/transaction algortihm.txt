@@ -1,0 +1,11 @@
+user decides to buy item click
+user goes to checkout page
+if user decides to add another item in cart, 
+	goes back to categories page
+else 
+	proceed ordersummary page
+user decides payment method
+goes to payment page
+after payment has been verified
+goes to receipt page
+done

@@ -1,16 +1,21 @@
-insert into user_type(description) values("admin");
-insert into user_type(description) values("user");
+insert into user_type(role) values("admin");
+insert into user_type(role) values("user");
 
-insert into user_status(description) values("active");
-insert into user_status(description) values("inactive");
+insert into user_status(status) values("active");
+insert into user_status(status) values("inactive");
 
-insert into order_status(description) values("pending");
-insert into order_status(description) values("delivered");
-insert into order_status(description) values("done");
+insert into order_status(status) values("pending");
+insert into order_status(status) values("completed");
 
-insert into users(username, password, email, first_name, last_name, gender, user_type,birthdate) 
-values("admin", "test123", "laotabudlong@gmail.com", "Kynt", "Tabudlong", "male",1,"1992-06-29");
+//admin
+insert into users(username, password, email, first_name, last_name, gender, user_type) 
+values("admin", "test123", "laotabudlong@gmail.com", "Kynt", "Tabudlong", "male",1);
 
+//sampleuser
+insert into users(username, password, email, first_name, last_name, gender, user_type) 
+values("knythiey", "test123", "kynt.tabudlong@gmail.com", "Zoom", "Simoy", "male",2);
+
+//categories
 insert into categories(name) values("PS4");
 insert into categories(name) values("XONE");
 insert into categories(name) values("SWITCH");

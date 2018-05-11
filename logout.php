@@ -3,11 +3,9 @@
 		function getTitle(){
 			echo "Logout Page";
 		}
-
-		if(isset($_SESSION['current_user']) && !empty($_SESSION['current_user'])){
-			session_unset();
-			session_destroy(); 
-		}
+		session_start();
+		session_unset();
+		session_destroy(); 
 	?>
 </head>
 <body>

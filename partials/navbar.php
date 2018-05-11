@@ -1,5 +1,6 @@
 <?php if(isset($_SESSION['current_user'])){
 	echo $_SESSION['current_user'];
+	echo $_SESSION['user_type'];
 	// session_unset();
 	// session_destroy();
 	} else {
@@ -60,7 +61,7 @@
 		     	</li>
 	     	<?php } ?>
 			
-			<?php if(!isset($_SESSION['current_user'])){ ?>
+			<?php if(!isset($_SESSION['current_user']) || $_SESSION['user_type'] == "admin"){ ?>
 	     	<li class="nav-item">
 	        	<a class="nav-link" href="register.php">REGISTER</a>
 	     	</li>

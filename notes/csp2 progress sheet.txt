@@ -8,3 +8,16 @@ started register page(may 11, 2018)
 got stuck on registering birthdate input field, createUser.php not finished, pls finish it.
 pushed CSP2 on gitlab branch staging.(may11, 2018 3am)
 *USE PHP_FILTER for sanitizing input datas*
+pulled from CSP2 gitlab remote repo
+learned how to send email for order receipt
+pushed template csp2 sir billy to gitlab remote "sirTerrence" which includes send_email logic
+
+finished logic if admin is logged in, can register another account, may it be admin, or user (may 11, 2018 5pm)
+
+almost finished logic of register page.
+	-username ajax
+	-email ajax
+	-password length
+	-password confirm
+		TIP: better use reg ex for password, and username. much better skill and security
+Modified some fields in the database

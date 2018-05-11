@@ -14,6 +14,13 @@
 		<h1> Login Page</h1>
 
 		<div class="container">
+			<p>
+				<?php 
+					if(isset($_SESSION['invalid_credentials_msg'])){
+						echo $_SESSION['invalid_credentials_msg'];
+					}
+				?>
+			</p>
 			<form action="lib/validateLogin.php" method="POST">
 				<div class="form-group">
 					<label for="username">Username: </label>

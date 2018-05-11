@@ -1,17 +1,25 @@
 <?php 
 	
 	require "connect.php";
-
+	session_start();
 	$loginUsername = $_POST['loginUsername'];
 	$loginPassword = $_POST['loginPassword'];
 
-	$query = "SELECT * FROM users WHERE username = '$loginUsername' && password = '$loginPassword'";
-	$result = mysqli_query($conn, $query);
+	$login_query = "SELECT * FROM users u JOIN user_type ut WHERE username = '$loginUsername' && password = '$loginPassword' && u.user_type = ut.id ";
+	$log_in_result = mysqli_query($conn, $login_query);
 
-	if(mysqli_num_rows($result) == 0){
-		echo "Invalid Credentials";
+	if(mysqli_num_rows($log_in_result) == 0){
+		$_SESSION['invalid_credentials_msg'] = "Invalid Credentials. Try Again!";
+		header("Location: ../login.php");
 	} else {
-		echo "Good";
+		foreach ($log_in_result as $key) {
+			$_SESSION['current_user'] = $key['username'];
+			// echo $_SESSION['current_user'] ."<br>";
+			$_SESSION['user_type'] = $key['role'];
+			// echo $_SESSION['user_type'] ."<br>";
+		}
+		$_SESSION['invalid_credentials_msg'] = "";
+		header("Location: ../home.php");
 	}
 
 ?>

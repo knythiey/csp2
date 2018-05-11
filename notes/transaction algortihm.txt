@@ -7,5 +7,7 @@ else
 user decides payment method
 goes to payment page
 after payment has been verified
-goes to receipt page
+header to email_sending.php (Make sure to make another email account for the website, and change settings in Sign-in and Security in Gmail *Allow Less Apps Secure:ON*)
+redirect to receipt page
+
 done

@@ -4,7 +4,15 @@ $(document).ready(function(){
 	//REGISTER PAGE//
 	/////////////////
 
-	//checks username availablity
+	// conditions need to be true to enable register button
+	var checkUsername = false;
+	var checkPassword = false;
+	var checkEmail = false;
+	var checkFirstname = false;
+	var checkLastname = false;
+	var checkGender = false;
+
+	//checks username availablity AJAX with regEX
 	$("#createUsername").on("keyup", function(){
 		var createUsername = $(this).val();
 		$.ajax({
@@ -12,9 +20,15 @@ $(document).ready(function(){
 			method: "POST",
 			data: {"createUsername" : createUsername},
 			success: function(data){
-				$("#usernameAvail").html(data);
-			}
-		})
+				if(data == true){
+					checkUsername = true;
+					$("#usernameAvail").html(" Username Good!");
+				} else {
+					$("#usernameAvail").html(data);
+					checkUsername = false;
+					}
+				}
+			})
 	});
 
 	//checks password is < 8 characters
@@ -34,13 +48,15 @@ $(document).ready(function(){
 
 		if(pword === confirmpw) {
 			$("#passwordMatch").html("Password matched!");
+			checkPassword = true;
 		} else {
 			$("#passwordMatch").html("Password does not matched!");
+			checkPassword = false;
 		}
 	});
 
 
-	//checks email availablity
+	//checks email availablity AJAX with regEx
 	$("#userEmail").on("keyup", function(){
 		var userEmail = $(this).val();
 		$.ajax({
@@ -48,10 +64,74 @@ $(document).ready(function(){
 			method: "POST",
 			data: {"userEmail" : userEmail},
 			success: function(data){
-				$("#emailAvail").html(data);
+				if(data == true){
+					checkEmail = true;
+					$("#emailAvail").html(" Email is good!");
+				} else {
+					$("#emailAvail").html(data);
+					checkEmail = false;
+				}
 			}
 		})
 	});
+
+	//checks first name format
+	$("#firstName").on("keyup", function(){
+		var firstName = $(this).val();
+		$.ajax({
+			url: "lib/validateFirstname.php",
+			method: "POST",
+			data: {"firstName" : firstName},
+			success: function(data){
+				if(data == true){
+					checkFirstname = true;
+					$("#validFirstname").html("");
+				} else {
+					$("#validFirstname").html(data);
+					checkFirstname = false;
+				}
+			}
+		})
+	})
+
+	//checks last name format
+	$("#lastName").on("keyup", function(){
+		var lastName = $(this).val();
+		$.ajax({
+			url: "lib/validatelastname.php",
+			method: "POST",
+			data: {"lastName" : lastName},
+			success: function(data){
+				if(data == true){
+					checkLastname = true;
+					$("#validLastname").html("");
+				} else {
+					$("#validLastname").html(data);
+					checkLastname = false;
+				}
+			}
+		})
+	})
+
+	//checks if gender is checked
+	$(".radioGender").on("change", function(){
+		var gender = $(this).val();
+
+		if(gender == "male" || gender == "female"){
+			checkGender = true;
+		} else {
+			checkGender = false;
+		}
+	})
+
+	// button is disabled until all fields are properly filled
+	$("#createUsername, #confirmPassword, #userEmail, #firstName, #lastName, .radioGender").on("change", function(){
+		if(checkUsername == true && checkPassword == true && checkEmail == true && checkFirstname == true && checkLastname == true && checkGender == true) {
+			$("#registerbtn").attr("disabled", false);
+		} else {
+			$("#registerbtn").attr("disabled", true);
+		}
+	})
 
 	/////////////////
 	//REGISTER PAGE//

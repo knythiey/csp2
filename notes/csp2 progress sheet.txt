@@ -1,9 +1,12 @@
 progress sheet:
 
-finished DB design (may 10, 2018)
-finished making files and folder structures of CSP2 (may 10, 2018)
-finished logic of navbar if session has current user or not (may 10, 2018)
-started login page logic(not yet finalized, but working, may11, 2018)
+[may 10, 2018]
+finished DB design 
+finished making files and folder structures of CSP2
+finished logic of navbar if session has current user or not
+
+[may11, 2018]
+started login page logic(not yet finalized, but working)
 started register page(may 11, 2018)
 got stuck on registering birthdate input field, createUser.php not finished, pls finish it.
 pushed CSP2 on gitlab branch staging.(may11, 2018 3am)
@@ -12,7 +15,7 @@ pulled from CSP2 gitlab remote repo
 learned how to send email for order receipt
 pushed template csp2 sir billy to gitlab remote "sirTerrence" which includes send_email logic
 
-finished logic if admin is logged in, can register another account, may it be admin, or user (may 11, 2018 5pm)
+finished logic if admin is logged in, can register another account, may it be admin, or user 
 
 almost finished logic of register page.
 	-username ajax
@@ -21,3 +24,20 @@ almost finished logic of register page.
 	-password confirm
 		TIP: better use reg ex for password, and username. much better skill and security
 Modified some fields in the database
+[may 11, 2018 5pm]
+
+[may 12, 2018]
+learned how to read and write Basic RegEx.
+added cheatsheet for RegEx in notes folder.
+finsihed the login page
+finished logic of script js for AJAX of creating new username, password, firstname, lastname, email, and gender. with [regex]
+finished logic of validateCreateUsername, validateEmail
+*NOTICE! add [regex logic] for password to have atleast 1 letteruppercase, and 1 number*
+Profile page to display all neccesary information about the current_user BONUS: with image, lol
+Finished logic of Update profile *NOTE: havent touched how to upadte profile since I odnt know how $_FILE works. will work on it later*
+will sleep now, time check 6:30am of may 13, 2018. Happy Mother's day to you all! WOOOO!
+[May 13, 2018 6:35am]
+
+
+
+

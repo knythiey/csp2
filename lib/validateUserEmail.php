@@ -9,7 +9,7 @@
 
 		if (preg_match('/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]{3,}\.[a-zA-Z]{2,}$/', $userEmail)) {
 			if(mysqli_num_rows($result) > 0){
-			echo "Email Already Exists";
+				echo "Email Already Exists";
 			} else {
 				echo true;
 			}

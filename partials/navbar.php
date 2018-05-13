@@ -1,8 +1,7 @@
 <?php if(isset($_SESSION['current_user'])){
 	echo $_SESSION['current_user'];
 	echo $_SESSION['user_type'];
-	// session_unset();
-	// session_destroy();
+	echo $_SESSION['user_status'];
 	} else {
 		echo "No current user.";
 	}

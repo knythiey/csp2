@@ -1,11 +1,11 @@
 <?php include "partials/header.php"; ?>
 	
-	<?php session_start(); ?>
 	<?php 
-	function getTitle(){
-		echo "Login Page";
-	} 
-?>
+		session_start();
+		function getTitle(){
+			echo "Login Page";
+		} 
+	?>
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
@@ -21,6 +21,13 @@
 					}
 				?>
 			</p>
+			<p>
+				<?php 
+					if(isset($_SESSION['deactNotification'])){
+						echo $_SESSION['deactNotification'];
+					}
+				?>
+			</p>
 			<form action="lib/validateLogin.php" method="POST">
 				<div class="form-group">
 					<label for="username">Username: </label>
@@ -33,7 +40,11 @@
 				<button type="submit" class="btn btn-primary">Log In</button>
 			</form>
 		</div>
-	
+	<?php 	
+		$_SESSION['deactNotification'] = ""; 
+		session_unset();
+		session_destroy();
+	?>
 	</div>
 	<?php include "partials/footer.php"; ?>
 <?php include "partials/foot.php"; ?>

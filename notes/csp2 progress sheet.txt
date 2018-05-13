@@ -38,6 +38,13 @@ Finished logic of Update profile *NOTE: havent touched how to upadte profile sin
 will sleep now, time check 6:30am of may 13, 2018. Happy Mother's day to you all! WOOOO!
 [May 13, 2018 6:35am]
 
+[May 13, 2018 10pm]
+finsihed profile page
+finished update user logic
+finsihed deactivating account using user_status data.
+need to add notifs if user has created account, and after updating user details
+next is items CRUD.
+
 
 
 

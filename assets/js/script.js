@@ -124,7 +124,7 @@ $(document).ready(function(){
 		}
 	})
 
-	// button is disabled until all fields are properly filled
+	// button is disabled until all fields are properly filled logic
 	$("#createUsername, #confirmPassword, #userEmail, #firstName, #lastName, .radioGender").on("change", function(){
 		if(checkUsername == true && checkPassword == true && checkEmail == true && checkFirstname == true && checkLastname == true && checkGender == true) {
 			$("#registerbtn").attr("disabled", false);
@@ -132,10 +132,16 @@ $(document).ready(function(){
 			$("#registerbtn").attr("disabled", true);
 		}
 	})
-
 	/////////////////
 	//REGISTER PAGE//
 	/////////////////
 
+	/////////////////
+	//   PROFILE   //
+	/////////////////
+
+	/////////////////
+	//   PROFILE   //
+	/////////////////
 
 })//$document.ready

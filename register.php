@@ -49,7 +49,7 @@
 
 				<div class="form-group">
 					<label for="gender">Gender:* </label>
-					<input type="radio" name="gender" value="male" required class="radioGender"> Male
+					<input type="radio" name="gender" value="male" class="radioGender" required> Male
 					<input type="radio" name="gender" value="female" class="radioGender"> Female
 				</div>
 

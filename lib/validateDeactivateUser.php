@@ -30,7 +30,7 @@
 				$_SESSION['invalid_credentials_msg'] = "";
 				header("Location: ../login.php");
 			} else {
-				$_SESSION['invalid_credentials_msg'] = "Invalid Credentials. Try Again!";
+				$_SESSION['invalid_credentials_msg'] = "Invalid Confirm Deactive Credentials. Try Again!";
 				header("Location: ../profile.php");
 			}
 		}

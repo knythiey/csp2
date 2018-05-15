@@ -140,8 +140,47 @@ $(document).ready(function(){
 	//   PROFILE   //
 	/////////////////
 
+	$("#deactBtn").on("click", function(){
+		$(this).toggle();
+		$("#validateDeactivateUser").toggle();
+	});
+
+	$("#closeDeact").on("click", function(){
+		$("#validateDeactivateUser").toggle();
+		$("#deactBtn").toggle();
+	});
+
+
 	/////////////////
 	//   PROFILE   //
+	/////////////////
+
+	/////////////////
+	//	HOME PAGE  //
+	/////////////////
+
+	//for read more, and read less on descriptions
+	var descMaxLen = 70;
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > descMaxLen){
+			var newStr = myStr.substring(0, descMaxLen);
+			var removedStr = myStr.substring(descMaxLen, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			// $(this).append('<a href = "javascript: void(0);" class="show-more"> show more . . .</a>');
+			$(this).append('<a href ="#" class="show-more"> show more . . .</a>');
+			$(this).append('<span class="more-text">'+ removedStr + '<a href="javascript:void(0)" class="show-less"> show less</a>' +'</span>');			
+			// $(this).append('<span class="more-text">'+ removedStr + '<a href="#" class="show-less"> show less</a>' +'</span>');			
+		}
+	});
+
+	$(".show-more").on("click", function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(".show-more").toggle();
+	});
+
+	/////////////////
+	//  HOME PAGE  //
 	/////////////////
 
 })//$document.ready

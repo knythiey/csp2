@@ -22,3 +22,34 @@ insert into categories(name) values("SWITCH");
 insert into categories(name) values("PS4 ACC");
 insert into categories(name) values("XONE ACC");
 insert into categories(name) values("SWITCH ACC");
+
+
+//products
+insert into products(product_name, product_image, description, price_each, category_id, product_feedback) 
+	values(
+	"Monster Hunter: World", 
+	"assets/img/uploads/mhw.jpg", 
+	"Battle gigantic monsters in epic locales.
+
+As a hunter, you'll take on quests to hunt monsters in a variety of habitats.
+Take down these monsters and receive materials that you can use to create stronger weapons and armor in order to hunt even more dangerous monsters.
+
+In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+	60.00,
+	1, 
+	1
+	);
+
+//product_feedback
+insert into product_feedback
+	(product_feedback, product_rating, user_id)
+	values
+	("This game is so hard to put down",
+	 "5",
+	 "3");
+insert into product_feedback
+	(product_feedback, product_rating, user_id) 
+	values 
+	("bad game, not recommended.",
+	 1,
+	 2);

@@ -41,10 +41,15 @@ will sleep now, time check 6:30am of may 13, 2018. Happy Mother's day to you all
 [May 13, 2018 10pm]
 finsihed profile page
 finished update user logic
-finsihed deactivating account using user_status data.
+finished deactivating account using user_status data.
 need to add notifs if user has created account, and after updating user details
 next is items CRUD.
 [May 14, 2018 7:30am ]
+
+[May 15, 2018]
+Finished user CRUD and functionalities including confirm deactivation ajax
+Started ITEMS crud
+Finished Retrieving an Item on Home page, to followup Create, update, and deleting an item
 
 
 

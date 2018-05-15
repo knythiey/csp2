@@ -38,7 +38,7 @@
 		        </div>
 	      	</li>
 
-	     	<?php if(isset($_SESSION['current_user'])){ ?>
+	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
 		     	<li class="nav-item">
 		        	<a class="nav-link" href="cart.php">MY CART</a>
 		     	</li>
@@ -54,7 +54,7 @@
 	     	</li>
 	     	<?php } ?>
 
-	     	<?php if(isset($_SESSION['current_user'])){ ?>
+	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
 		     	<li class="nav-item">
 		        	<a class="nav-link" href="logout.php">LOG OUT</a>
 		     	</li>
@@ -66,7 +66,7 @@
 	     	</li>
 	     	<?php } ?>
 
-	     	<?php if(isset($_SESSION['current_user'])){ ?>
+	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
 		     	<li class="nav-item">
 		        	<a class="nav-link" href="profile.php">MY PROFILE</a>
 		     	</li>

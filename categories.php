@@ -5,7 +5,7 @@
 	?>
 	<?php 
 	function getTitle(){
-		echo "id Category Page";
+		echo "Category Page";
 	} 
 ?>
 </head>
@@ -13,7 +13,7 @@
 	<?php include "../partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		
-		<h1> id Category Page</h1>
+		<h1> Category Page</h1>
 	
 	</div>
 	<?php include "../partials/footer.php"; ?>

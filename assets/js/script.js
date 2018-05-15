@@ -139,6 +139,16 @@ $(document).ready(function(){
 	/////////////////
 	//   PROFILE   //
 	/////////////////
+	
+	$('#deactBtn').on("click", function(){
+		$(this).toggle();
+		$("#validateDeactivateUser").toggle();
+	})
+
+	$("#closeDeact").on("click", function(){
+		$("#deactBtn").toggle();
+		$("#validateDeactivateUser").toggle();
+	});
 
 	/////////////////
 	//   PROFILE   //

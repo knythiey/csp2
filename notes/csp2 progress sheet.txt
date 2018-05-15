@@ -44,6 +44,7 @@ finished update user logic
 finsihed deactivating account using user_status data.
 need to add notifs if user has created account, and after updating user details
 next is items CRUD.
+[May 14, 2018 7:30am ]
 
 
 

@@ -13,7 +13,8 @@
 <body>
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper" style="text-align: center;">
-		
+		<div class="container" class="profileContainer">
+			
 		<h1> Profile Page</h1>
 		<?php 
 		if(isset($_SESSION['user_id']) && $_SESSION['user_status'] == 1){
@@ -74,11 +75,12 @@
 			</tbody>
 		</table>
 				<a href="updateProfile.php"><button class="btn btn-info">Update User Profile</button></a>
-				<div class="container" id="validateDeactivateUser" style="width: 50%; margin: 0 auto; text-align: left;">
+				<div class="container" id="validateDeactivateUser" >
 					<?php if(isset($_SESSION['invalid_credentials_msg'])){
 							echo $_SESSION['invalid_credentials_msg'];
 						} 
 					?>
+					<button id="closeDeact" class="btn btn-danger">X</button>
 					<form action="lib/validateDeactivateUser.php" method="POST">
 						<div class="form-group">
 							<label for="username">Username: </label>
@@ -95,7 +97,7 @@
 						<button class="btn btn-danger" id="confirmDeactUser" type="submit">Confirm Deactivate</button>
 					</form>
 				</div>
-				<a href="#validateDeactivateUser"><button class="btn btn-warning">Deactivate User</button></a>
+				<a href="#validateDeactivateUser" id="deactBtn"><button class="btn btn-warning">Deactivate User</button></a>
 
 				<?php 
 					$_SESSION['invalid_credentials_msg'] = "";
@@ -108,6 +110,7 @@
 				?>	
 				<!-- <img src="assets/img/user_avatar/default_avatar_male.jpg" alt="default_avatar">
 				<h2>No current User, Log in first</h2> -->		
-	</div>
+		</div>
+	</div><!-- main wrapper -->
 	<?php include "partials/footer.php"; ?>
 <?php include "partials/foot.php"; ?>

@@ -21,13 +21,7 @@
 					}
 				?>
 			</p>
-			<p>
-				<?php 
-					if(isset($_SESSION['deactNotification'])){
-						echo $_SESSION['deactNotification'];
-					}
-				?>
-			</p>
+
 			<form action="lib/validateLogin.php" method="POST">
 				<div class="form-group">
 					<label for="username">Username: </label>
@@ -40,10 +34,8 @@
 				<button type="submit" class="btn btn-primary">Log In</button>
 			</form>
 		</div>
-	<?php 	
-		$_SESSION['deactNotification'] = ""; 
-		session_unset();
-		session_destroy();
+	<?php 
+		$_SESSION['invalid_credentials_msg'] = "";	
 	?>
 	</div>
 	<?php include "partials/footer.php"; ?>

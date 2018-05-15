@@ -28,7 +28,7 @@
 					$_SESSION['user_status'] = $key['user_status'];
 				}
 				$_SESSION['invalid_credentials_msg'] = "";
-				header("Location: ../login.php");
+				header("Location: ../deactivatedUser.php");
 			} else {
 				$_SESSION['invalid_credentials_msg'] = "Invalid Credentials. Try Again!";
 				header("Location: ../profile.php");

@@ -44,5 +44,33 @@ h1 {
 	height: auto;
 }
 
+/*************************/
+/*	 	  Profile  	 	 */
+/*************************/
+.profileContainer {
+	position: relative;
+}
+
+#deactBtn {
+	display: inline-block;
+}
+
+#validateDeactivateUser {
+	display: none;
+	width: 50%; 
+	margin: 0 auto; 
+	text-align: left;
+	position: relative;
+	padding: 0;
+}
+
+#closeDeact {
+	/*border-radius: 50%;*/
+	font-size: .5rem;
+	position: absolute;
+	top:0;
+	right: 0;
+}
+
 
 

@@ -26,7 +26,7 @@
 				$_SESSION['user_email'] = $key['email'];
 				$_SESSION['user_type'] = $key['role'];
 		}
-		header("Location: ../profile.php")	
+		header("Location: ../profile.php");	
 	} else {
 		$username = $_POST['createUsername'];
 		$password = sha1($_POST['createPassword']);
@@ -50,7 +50,7 @@
 				$_SESSION['user_gender'] = $key['gender'];
 				$_SESSION['user_email'] = $key['email'];
 		}
-		header("Location: ../profile.php")	
+		header("Location: ../profile.php");	
 	}
 	
 ?>

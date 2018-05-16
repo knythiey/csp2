@@ -50,8 +50,14 @@ next is items CRUD.
 Finished user CRUD and functionalities including confirm deactivation ajax
 Started ITEMS crud
 Finished Retrieving an Item on Home page, to followup Create, update, and deleting an item
-[may16, 2018 9am]
+
+[may 16, 2018 9am]
 finished creating an item, just need to update and delete
+
+[May 16, 2018 5pm @tuitt]
+finished Create Product, Update Product, and Delete Product Logic.
+Need to start Cart. 
+
 
 
 

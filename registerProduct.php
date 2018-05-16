@@ -13,7 +13,7 @@
 		
 		<h1>Register Product Page</h1>
 		<div class="container registerProduct-form">
-			<form action="createProduct.php" method="POST" enctype="multipart/form-data">
+			<form action="lib/createProduct.php" method="POST" enctype="multipart/form-data">
 				<p><?php 
 					if(isset($_SESSION['uploadMsg'])){
 						echo $_SESSION['uploadMsg'];
@@ -41,7 +41,7 @@
 					<label for="prodPrice">Product Price:* </label>
 					<span>US$</span><input type="number" class="form-control" name="prodPrice" id="prodPrice" required>
 				</div>
-
+				
 				<div class="form-group">
 					<label for="prodCategory">Product Category:</label>
 					<select name="prodCat" id="prodCat">
@@ -53,17 +53,6 @@
 						<option value="6">Nintendo Switch Accessory</option>
 					</select>
 				</div>	
-
-				<div class="form-group">
-					<label for="prodFeedback">Product Feedback:</label>
-					<select name="prodFeedback" id="prodFeedback">
-						<option value="1" required>Very Good</option>
-						<option value="5">Good</option>
-						<option value="3">Fair</option>
-						<option value="4">Poor</option>
-						<option value="2">Very Poor</option>
-					</select>
-				</div>
 				
 				<div class="form-group">
 					<label for="prodImg">Upload Product Image</label>

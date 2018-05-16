@@ -5,23 +5,8 @@
 		}
 		session_start();
 		session_unset();
-		session_destroy(); 
+		session_destroy();
+		session_start();
+		$_SESSION['logoutMsg'] =  "You just logged out. Login to process any activity."; 
+		header("Location: index.php");
 	?>
-</head>
-<body>
-	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
-		
-		<h1> Logout Page</h1>
-
-		<?php
-		if(!isset($_SESSION['current_user']))
-			echo "There is no current user.";
-		else {
-			echo $_SESSION['current_user']; 
-			}
-		?> 
-	
-	</div>
-	<?php include "partials/footer.php"; ?>
-<?php include "partials/foot.php"; ?>

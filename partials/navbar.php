@@ -71,6 +71,11 @@
 		        	<a class="nav-link" href="profile.php">MY PROFILE</a>
 		     	</li>
 	     	<?php } ?>
+	     	<?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){  ?>
+	     		<li class="nav-item">
+	     			<a class="nav-link" href="registerProduct.php">REGISTER PRODUCT</a>
+	     		</li>
+	     	<?php } ?>
 	    </ul>
 	</div>
 </nav>

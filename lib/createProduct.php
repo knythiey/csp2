@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	require "lib/connect.php";
+	require "connect.php";
 
 	//file upload
-	$target_dir = "assets/img/product_imgs/";
+	$target_dir = "../assets/img/product_imgs/";
 	$target_file = $target_dir . basename($_FILES['prodImg']['name']);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 
@@ -26,7 +26,7 @@
 	    header("Location: registerProduct.php"); 
 	}
 	
-	if($_FILES["prodImg"]["size"] > 500000) {
+	if($_FILES["prodImg"]["size"] > 1000000) {
 	    $_SESSION['uploadMsg'] = "Sorry, your file is too large.";
 	    $uploadOk = 0;
 	    header("Location: registerProduct.php");
@@ -43,30 +43,28 @@
 	    $_SESSION['uploadMsg'] =  "Sorry, your file was not uploaded.";
 	} else {
 	    if (move_uploaded_file($_FILES["prodImg"]["tmp_name"], $target_file)) {
-	        $_SESSION['uploadMsg'] = "The file ". basename( $_FILES["prodImg"]["name"]). " has been uploaded to " . $target_dir . ".";
+	    	//inserting data into database;
+			$prodName = $_POST['prodName'];
+			$prodDesc = $_POST['prodDesc'];
+			$prodPrice = $_POST['prodPrice'];
+			$prodCat = $_POST['prodCat'];
+			$imgName = basename($_FILES['prodImg']['name']);
+			$target_folder = "assets/img/product_imgs/";
+			$imagePath = $target_folder . $imgName;
+			
+			$query = "INSERT INTO products(product_name, product_image, description, price_each, category_id) VALUES ('$prodName', '$imagePath', '$prodDesc', '$prodPrice', '$prodCat')";
+			$result = mysqli_query($conn, $query);
+			if($result == true) {
+				$_SESSION['insertDbConfirm'] = "Data successfully inserted into " . $dbname . " database.";
+	       		$_SESSION['uploadMsg'] = "The file ". basename( $_FILES["prodImg"]["name"]). " has been uploaded to " . $target_dir . ".";
+			} else {
+				$_SESSION['insertDbConfirm'] = "Insertion to Database failed";
+			}
+
 	    } else {
 	        $_SESSION['uploadMsg'] = "Sorry, there was an error uploading your file.";
 	        header("Location: registerProduct.php");
 	    }
 	}
-
-	//inserting data into database;
-	$prodName = $_POST['prodName'];
-	$prodDesc = $_POST['prodDesc'];
-	$prodPrice = $_POST['prodPrice'];
-	$prodCat = $_POST['prodCat'];
-	$prodFb = $_POST['prodFeedback'];
-	$imgName = basename($_FILES['prodImg']['name']);
-	$imagePath = $target_dir . $imgName;
-	
-	$query = "INSERT INTO products(product_name, product_image, description, price_each, category_id, product_feedback) VALUES ('$prodName', '$imagePath', '$prodDesc', '$prodPrice', '$prodCat', '$prodFb')";
-	$result = mysqli_query($conn, $query);
-
-	if($result == true) {
-		$_SESSION['insertDbConfirm'] = "Data successfully inserted into " . $dbname . " database.";
-	} else {
-		$_SESSION['insertDbConfirm'] = "Insertion to Database failed";
-	}
-
-	header("Location: registerProduct.php");
+	header("Location: ../registerProduct.php");
 ?>

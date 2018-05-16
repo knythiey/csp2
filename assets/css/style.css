@@ -80,7 +80,7 @@ h1 {
 }
 
 .home-prod-img {
-	height: 350px;
+	height: 370px;
 }
 
 .more-text {
@@ -113,4 +113,21 @@ h1 {
 	border: 1px solid red;
 	width: 60%;
 	height: 480px;
+}
+
+#closeDelProd {
+	font-size: .5rem;
+	position: absolute;
+	right: 120px; 
+}
+
+#delprodBtn {
+	display: inline;
+}
+
+#confirmDelProd {
+	display: none;
+	position:relative;
+	border: 1px solid red;
+	text-align: center;
 }

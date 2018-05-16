@@ -181,4 +181,22 @@ $(document).ready(function(){
 	//  HOME PAGE  //
 	/////////////////
 
+	/////////////////
+	//PRODUCT PAGE //
+	/////////////////
+
+	$("#delProdBtn").on("click", function(){
+		$("#confirmDelProd").toggle();
+		$(this).toggle();
+	})
+
+	$("#closeDelProd").on("click", function(){
+		$("#confirmDelProd").toggle();
+		$("#delProdBtn").toggle()
+	})
+
+	/////////////////
+	//PRODUCT PAGE //
+	/////////////////
+
 })//$document.ready

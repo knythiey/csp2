@@ -91,3 +91,26 @@ h1 {
 	display: inline;
 }
 
+/*************************/
+/*	 	  Product 	  	 */
+/*************************/
+.product-container {
+	border:1px solid blue;
+	padding-bottom: 15px;
+}
+
+.prod-left-cont {
+	border: 1px solid yellow;
+	padding: 0;
+}
+
+.prod-right-cont {
+	border: 1px solid violet;
+	padding: 0;
+}
+
+.prod-display-image {
+	border: 1px solid red;
+	width: 60%;
+	height: 480px;
+}

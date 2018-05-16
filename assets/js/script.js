@@ -139,27 +139,15 @@ $(document).ready(function(){
 	/////////////////
 	//   PROFILE   //
 	/////////////////
-	
-	$('#deactBtn').on("click", function(){
-		$(this).toggle();
-		$("#validateDeactivateUser").toggle();
-	})
-
-	$("#closeDeact").on("click", function(){
-		$("#deactBtn").toggle();
-		$("#validateDeactivateUser").toggle();
-	});
-
 	$("#deactBtn").on("click", function(){
 		$(this).toggle();
 		$("#validateDeactivateUser").toggle();
 	});
 
 	$("#closeDeact").on("click", function(){
-		$("#validateDeactivateUser").toggle();
 		$("#deactBtn").toggle();
+		$("#validateDeactivateUser").toggle();
 	});
-
 
 	/////////////////
 	//   PROFILE   //

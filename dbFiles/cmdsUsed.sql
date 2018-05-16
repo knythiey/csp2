@@ -45,11 +45,29 @@ insert into product_feedback
 	(product_feedback, product_rating, user_id)
 	values
 	("This game is so hard to put down",
-	 "5",
-	 "3");
+	 5,
+	 3);
+insert into product_feedback
+	(product_feedback, product_rating, user_id)
+	values
+	("This game is so hard to put down",
+	 4,
+	 3);
+insert into product_feedback
+	(product_feedback, product_rating, user_id)
+	values
+	("This game is so hard to put down",
+	3,
+	9);
+insert into product_feedback
+	(product_feedback, product_rating, user_id)
+	values
+	("This game is so hard to put down",
+	2,
+	9);
 insert into product_feedback
 	(product_feedback, product_rating, user_id) 
 	values 
 	("bad game, not recommended.",
-	 1,
-	 2);
+	1,
+	9);

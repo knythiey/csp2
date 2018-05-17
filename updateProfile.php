@@ -9,7 +9,7 @@
 
 		require "lib/connect.php";
 		$user_id = $_SESSION['user_id'];
-		$user_details = "SELECT DISTINCT * FROM users u JOIN user_status us JOIN user_type ut WHERE u.id = '$user_id' && u.user_type = ut.id && u.user_status = us.id;";
+		$user_details = "SELECT * FROM users u JOIN user_status us JOIN user_type ut WHERE u.id = '$user_id' && u.user_type = ut.id && u.user_status = us.id;";
 		$result = mysqli_query($conn, $user_details);
 		?>
 </head>

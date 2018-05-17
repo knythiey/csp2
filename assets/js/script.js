@@ -200,3 +200,26 @@ $(document).ready(function(){
 	/////////////////
 
 })//$document.ready
+	
+	//shows how much quantity to add to cart
+	function showAddQuantity(pId) {
+		var prod_id = pId;
+		$("#showQuantity" + prod_id).toggle();
+		// var prod_quantity = 
+		
+	}
+
+	//logic for adding to cart
+	function addToCart(pId){
+		var prod_id = pId;
+		var quantity = $("#productQuantity" + prod_id).val();
+
+		$.ajax({
+			url: "lib/addToCart.php",
+			method: "POST",
+			data: {"prod_id": prod_id, "prod_quant": quantity},
+			success: function(data){
+				$("#itemCount").html(data);
+			}
+		});
+	}

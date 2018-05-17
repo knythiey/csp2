@@ -34,7 +34,14 @@
 									<h5 class="card-title"><?php echo $key['product_name'] ?></h5>
 									<p class="card-text show-read-more"><?php echo $key['description'] ?></p>
 									<a href="product.php?id=<?php echo $key['id'] ?>" class="btn btn-info">Product Details</a>
-									<button class="btn btn-success form">Add to Cart</button>
+									<button class="btn btn-success form" onclick="showAddQuantity(<?php echo $key['id'] ?>)" id = "showQuantityBtn">Buying this</button>
+									<div  id="showQuantity<?php echo $key['id']  ?>" class="showQuantity">
+									<input type="number" name="productQuantity" id="productQuantity<?php echo $key['id'] ?>"
+									value="" 
+									class="form-control productQuantity" min="0">
+									<button class="btn btn-primary btn-sm" onclick="addToCart(<?php echo $key['id'] ?>)">Add to Cart</button>
+									</div>
+
 								</div>
 							</div> <!--card -->
 						</div>

@@ -91,6 +91,19 @@ h1 {
 	display: inline;
 }
 
+/*CART*/
+
+.showQuantity {
+	display:none;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.productQuantity {
+	width: 40%;
+	display:inline-block;
+}
+
 /*************************/
 /*	 	  Product 	  	 */
 /*************************/
@@ -130,4 +143,22 @@ h1 {
 	position:relative;
 	border: 1px solid red;
 	text-align: center;
+}
+/*************************/
+/*	 	  Cart  	 	 */
+/*************************/
+
+.cart-display-image {
+	border: 1px solid red;
+	width: 20%;
+	height: 300px;
+}
+
+.media-body {
+	width: 70%;
+}
+
+.productQuantityCart {
+	width: 13%;
+	display:inline-block;
 }

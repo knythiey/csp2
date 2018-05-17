@@ -14,6 +14,7 @@
 
 		// $rating_avg = "SELECT AVG(product_rating) apr FROM product_feedback pf JOIN products p  WHERE p.id = '$prod_id' && p.product_feedback = pf.id";
 		//$rating_avg_result = mysqli_query($conn, $rating_avg);
+
 	}
 ?>
 </head>
@@ -21,10 +22,10 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		<h1> Product Details Page</h1>
-		<?php if(isset($_SESSION['insertDbConfirm']) && $_SESSION['user_type'] == "admin"){
+		<?php if(isset($_SESSION['insertDbConfirm']) && isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){
 				echo $_SESSION['insertDbConfirm'];
 				}
-			if(isset($_SESSION['deleteDbConfirm']) && $_SESSION['user_type'] == "admin"){
+			if(isset($_SESSION['deleteDbConfirm']) && isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){
 				echo $_SESSION['deleteDbConfirm'];
 				} 
 		?>

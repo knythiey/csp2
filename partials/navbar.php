@@ -40,7 +40,19 @@
 
 	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
 		     	<li class="nav-item">
-		        	<a class="nav-link" href="cart.php">MY CART</a>
+		        	<a class="nav-link" href="cart.php">
+		        		MY CART ( 
+		        		<span id="itemCount">
+		        			<?php 
+		        				if(isset($_SESSION['itemCountCart'])) {
+		        					echo $_SESSION['itemCountCart'];
+		        				} else {
+		        					echo " 0 ";
+		        				}
+		        			?>
+		        		</span> 
+		        		)
+		        	</a>
 		     	</li>
 	     	<?php } ?>
 

@@ -58,6 +58,10 @@ finished creating an item, just need to update and delete
 finished Create Product, Update Product, and Delete Product Logic.
 Need to start Cart. 
 
+[may 17, 2018 @5pm Tuitt]
+Finished cart logic, update almost done but need to add AJAX on product subtotal.
+Need to start deleting items from cart.
+
 
 
 

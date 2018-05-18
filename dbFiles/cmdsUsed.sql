@@ -15,6 +15,8 @@ values("admin", "test123", "laotabudlong@gmail.com", "Kynt", "Tabudlong", "male"
 insert into users(username, password, email, first_name, last_name, gender, user_type) 
 values("knythiey", "test123", "kynt.tabudlong@gmail.com", "Zoom", "Simoy", "male",2);
 
+insert into users(shipping_address) values('phase 1 blk 9 lot 17 Cebu Philippines') where id = 4;
+
 //categories
 insert into categories(name) values("PS4");
 insert into categories(name) values("XONE");

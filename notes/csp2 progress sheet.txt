@@ -67,6 +67,10 @@ finished logic of adding, updating, and deleting from cart with ajax on navbar c
 need to add logic if 0 items on cart, will display another another message.
 will start checkout.
 
+[may 19, 2018 7am @jayr's]
+finsihed upadted profile logic with confirm password during updating
+finished cart logic until checkout. jsut need to finshed database input with orderitems.php. also currently making referrence number;
+
 
 
 

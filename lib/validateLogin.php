@@ -22,6 +22,7 @@
 		foreach ($id_result as $key) {
 			$_SESSION['user_id'] = $key['id'];
 			$_SESSION['user_status'] = $key['user_status'];
+			$_SESSION['date_created'] = $key['date_created'];
 		}
 
 		foreach ($log_in_result as $key) {

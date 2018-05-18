@@ -11,6 +11,7 @@ $(document).ready(function(){
 	var checkFirstname = false;
 	var checkLastname = false;
 	var checkGender = false;
+	var checkOldPassword = false;
 
 	//checks username availablity AJAX with regEX
 	$("#createUsername").on("keyup", function(){
@@ -152,6 +153,47 @@ $(document).ready(function(){
 	/////////////////
 	//   PROFILE   //
 	/////////////////
+	
+	/////////////////
+	//UPDATEPROFILE//
+	/////////////////
+
+	$("#newPassBtn").on("click", function(){
+		$("#newPassCont").toggle();
+		$(this).toggle();
+		$("#createPassword").attr("disabled", false);
+		$("#confirmPassword").attr("disabled", false);
+	});
+
+	$("#closeNewPassCont").on("click", function(){
+		$("#newPassCont").toggle();
+		$("#newPassBtn").toggle();
+	});
+
+	$("#oldPassword").on("keyup", function(){
+		var pass = $(this).val();
+		if(pass.length < 8 && pass.length > 0){
+			$("#oldPassLength").html("Password too short.");
+			checkOldPassword = false;
+		} else if (pass.length < 200 && pass.length > 8) {
+			$("#oldPassLength").html("Password is Good.");
+			checkOldPassword = true;
+		}
+	});
+
+		// button is disabled until all fields are properly filled logic
+	$("#createUsername, #oldPassword, #userEmail, #firstName, #lastName, .radioGender").on("change", function(){
+		if(checkUsername == true && checkOldPassword == true && checkEmail == true && checkFirstname == true && checkLastname == true && checkGender == true) {
+			$("#updateUserBtn").attr("disabled", false);
+		} else {
+			$("#updateUserBtn").attr("disabled", true);
+		}
+	})	
+
+	/////////////////
+	//UPDATEPROFILE//
+	/////////////////
+	
 
 	/////////////////
 	//	HOME PAGE  //

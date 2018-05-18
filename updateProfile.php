@@ -18,6 +18,13 @@
 	<div class="main-wrapper">
 		
 		<h1>Update Profile Page</h1>
+		<p>
+			<?php 
+				if(isset($_SESSION['updateProfileMsg'])){
+					echo $_SESSION['updateProfileMsg'];
+				}
+			?>
+		</p>
 		<div class="container register-form">
 			<form action="lib/validateUserUpdate.php" method="POST">
 				<?php foreach ($result as $key) { ?>
@@ -28,13 +35,21 @@
 					</div>
 
 					<div class="form-group">
-						<label for="password">Password:* </label><small id="passwordLength"></small>
-						<input type="password" class="form-control" name="createPassword" id="createPassword" placeholder="Enter New Password" required>
+						<label for="password">Old Password:* </label><small id="oldPassLength"></small>
+						<button class="btn btn-primary btn-sm" id="newPassBtn" type="button">Change Password</button>
+						<input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter Old Password" required>
 					</div>
+					<div id="newPassCont">
+						<button class="btn btn-danger btn-sm" id="closeNewPassCont" type="button">X</button>
+						<div class="form-group">
+							<label for="password">New Password:* </label><small id="passwordLength"></small>
+							<input type="password" class="form-control" name="createPassword" id="createPassword" placeholder="Enter New Password" required disabled>
+						</div>
 
-					<div class="form-group">
-						<label for="confirmPassword">Confirm Password:* </label><small id="passwordMatch"></small>
-						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm New Password" required>
+						<div class="form-group">
+							<label for="confirmPassword">Confirm New Password:* </label><small id="passwordMatch"></small>
+							<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm New Password" required disabled>
+						</div>
 					</div>
 
 					<div class="form-group">
@@ -58,6 +73,16 @@
 						<input type="radio" name="gender" value="female" class="radioGender"> Female
 					</div>
 
+					<div class="form-group">
+						<label for="shipping Address">Shipping Address: </label>
+						<input type="text" class="form-control" name="updateShipAdd" id="updateShippAdd" placeholder="Enter Shipping Address" value="<?php echo $key['shipping_address'] ?>" required>
+					</div>
+
+					<div class="form-group">
+						<label for="contact number">Contact Number: </label>
+						<input type="number" class="form-control" name="updateContactNum" id="updateContactNum" placeholder="Enter Contact Number" value="<?php echo $key['contact_number'] ?>" required>
+					</div>
+
 					<?php if(isset($_SESSION['current_user']) && $_SESSION['user_type'] == "admin"){ ?>
 							<div class="form-group">
 								<label for="userType">User Type: (Admin Account Only)</label>
@@ -69,9 +94,14 @@
 					<?php } ?>
 
 				<?php } ?>
-				<button class="btn btn-primary" type="submit" id="registerbtn">Update User Profile</button>
+				<button class="btn btn-primary" type="submit" id="updateUserBtn" disabled>Update User Profile</button>
 			</form>
 		</div><!--container-->
+		<?php 
+				if(isset($_SESSION['updateProfileMsg'])){
+					$_SESSION['updateProfileMsg'] = "";
+				}
+			?>
 	
 	</div>
 	<?php include "partials/footer.php"; ?>

@@ -69,6 +69,26 @@ h1 {
 }
 
 /*************************/
+/*	   Update Profile	 */
+/*************************/
+#newPassBtn {
+	display: inline;
+}
+
+#newPassCont {
+	display: none;
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#closeNewPassCont {
+	position: absolute;
+	right: 0;
+}
+
+
+/*************************/
 /*	 	  	Home 	  	 */
 /*************************/
 
@@ -171,4 +191,17 @@ h1 {
 #delete-cart-item{
 	position: absolute;
 	right: 0;
+}
+
+/*************************/
+/*	 	  Checkout 	  	 */
+/*************************/
+
+#checkout-prod-img {
+	width:50%;
+	height: 150px;
+}
+
+#checkout-img-cont {
+	text-align: center;
 }

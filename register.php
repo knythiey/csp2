@@ -53,6 +53,16 @@
 					<input type="radio" name="gender" value="female" class="radioGender"> Female
 				</div>
 
+				<div class="form-group">
+						<label for="shipping Address">Shipping Address: </label>
+						<input type="text" class="form-control" name="createShipAdd" id="createShipAdd" placeholder="Enter Shipping Address" required>
+					</div>
+
+				<div class="form-group">
+					<label for="contact number">Contact Number: </label>
+					<input type="number" class="form-control" name="createContNumber" id="createContNumber" placeholder="Enter Contact Number" required>
+				</div>
+
 				<?php if(isset($_SESSION['current_user']) && $_SESSION['user_type'] == "admin"){ ?>
 						<div class="form-group">
 							<label for="userType">User Type: (Admin Account Only)</label>

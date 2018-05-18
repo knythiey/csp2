@@ -1,5 +1,6 @@
 <?php 
 	require "connect.php";
+	session_start();
 
 	if(isset($_POST['userType'])){
 		$userType = $_POST['userType'];
@@ -9,7 +10,9 @@
 		$firstName = $_POST['firstName'];
 		$lastName = $_POST['lastName'];
 		$gender = $_POST['gender'];
-		$query = "INSERT INTO users(username, password, email, first_name, last_name, gender,user_type) VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$gender', $userType)";
+		$ship_add = $_POST['createShipAdd'];
+		$cont_num = $_POST['createContNumber'];
+		$query = "INSERT INTO users(username, password, email, first_name, last_name, gender, contact_number, shipping_address, user_type) VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$gender','$cont_num','$ship_add', $userType)";
 		$result = mysqli_query($conn, $query);
 
 		$session_query = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
@@ -25,6 +28,9 @@
 				$_SESSION['user_gender'] = $key['gender'];
 				$_SESSION['user_email'] = $key['email'];
 				$_SESSION['user_type'] = $key['role'];
+				$_SESSION['user_address'] = $key['shipping_address'];
+				$_SESSION['user_contact'] = $key['contact_number'];
+				$_SESSION['date_created'] = $key['date_created'];
 		}
 		header("Location: ../profile.php");	
 	} else {
@@ -34,7 +40,9 @@
 		$firstName = $_POST['firstName'];
 		$lastName = $_POST['lastName'];
 		$gender = $_POST['gender'];
-		$query = "INSERT INTO users(username, password, email, first_name, last_name, gender) VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$gender')";
+		$ship_add = $_POST['createShipAdd'];
+		$cont_num = $_POST['createContNumber'];
+		$query = "INSERT INTO users(username, password, email, first_name, last_name, gender,contact_number, shipping_address) VALUES ('$username', '$password', '$email', '$firstName', '$lastName', '$gender','$cont_num','$ship_add')";
 		$result = mysqli_query($conn, $query);
 
 		$session_query = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
@@ -49,6 +57,10 @@
 				$_SESSION['user_avatar'] = $key['user_avatar_path'];
 				$_SESSION['user_gender'] = $key['gender'];
 				$_SESSION['user_email'] = $key['email'];
+				$_SESSION['user_address'] = $key['shipping_address'];
+				$_SESSION['user_contact'] = $key['contact_number'];
+				$_SESSION['date_created'] = $key['date_created'];
+				$_SESSION['user_type'] = $key['role'];
 		}
 		header("Location: ../profile.php");	
 	}

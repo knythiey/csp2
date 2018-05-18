@@ -1,0 +1,174 @@
+/***************************/
+/*  	INITIAL CONFIG    */
+/**************************/
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*************************/
+/*	 	CSS VARIABLES	 */
+/*************************/
+:root {
+	--main-background-color: #33ff33;
+	--navbar-background-color: #343a40;
+}
+
+/*************************/
+/*	 	Main Wrapper	 */
+/*************************/
+
+.main-wrapper {
+	background-color: var(--main-background-color);
+	height: auto;
+}
+
+h1 {
+	text-align: center;
+}
+/*************************/
+/*	 	Main Footer 	 */
+/*************************/
+#main-footer {
+	text-align: center;
+	background-color: var(--navbar-background-color);
+	color: white;
+}
+
+/*************************/
+/*	 	  Register  	 */
+/*************************/
+.register-form {
+	height: auto;
+}
+
+/*************************/
+/*	 	  Profile  	 	 */
+/*************************/
+#validateDeactivateUser {
+	display: none;
+	width: 50%; 
+	margin: 0 auto; 
+	text-align: left;
+	display: none;
+	position: relative;
+	padding: 0;
+}
+
+#closeDeact {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: .7rem;
+}
+
+#deactBtn {
+	display: inline-block;
+}
+
+/*************************/
+/*	 	  	Home 	  	 */
+/*************************/
+
+.card {
+	width: 18rem;
+	margin-bottom: 15px;
+	min-height: 550px;
+	max-height: auto;
+}
+
+.home-prod-img {
+	height: 370px;
+}
+
+.more-text {
+	display: none;
+}
+
+.show-less {
+	display: inline;
+}
+
+/*CART*/
+
+.showQuantity {
+	display:none;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.productQuantity {
+	width: 40%;
+	display:inline-block;
+}
+
+/*************************/
+/*	 	  Product 	  	 */
+/*************************/
+.product-container {
+	border:1px solid blue;
+	padding-bottom: 15px;
+}
+
+.prod-left-cont {
+	border: 1px solid yellow;
+	padding: 0;
+}
+
+.prod-right-cont {
+	border: 1px solid violet;
+	padding: 0;
+}
+
+.prod-display-image {
+	border: 1px solid red;
+	width: 60%;
+	height: 480px;
+}
+
+#closeDelProd {
+	font-size: .5rem;
+	position: absolute;
+	right: 120px; 
+}
+
+#delprodBtn {
+	display: inline;
+}
+
+#confirmDelProd {
+	display: none;
+	position:relative;
+	border: 1px solid red;
+	text-align: center;
+}
+/*************************/
+/*	 	  Cart  	 	 */
+/*************************/
+
+.cart-display-image {
+	border: 1px solid red;
+	width: 20%;
+	height: 300px;
+}
+
+.media-body {
+	width: 70%;
+}
+
+.productQuantityCart {
+	width: 13%;
+	display:inline-block;
+}
+
+.cart-container {
+	position: relative;
+	display:block;
+}
+
+#delete-cart-item{
+	position: absolute;
+	right: 0;
+}

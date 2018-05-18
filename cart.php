@@ -7,9 +7,6 @@
 
 		}
 		require "lib/connect.php";
-		if(isset($_SESSION['cart'])){
-			$cartItems = $_SESSION['cart']; 	
-		}
 	?>
 </head>
 <body>
@@ -18,7 +15,9 @@
 		
 		<h1> Cart Page</h1>
 		<hr>
-		<?php if(isset($_SESSION['cart'])){ ?>
+		<?php if(isset($_SESSION['cart'])){ 
+			  $cartItems = $_SESSION['cart'];
+			?>
 		<div class="container">
 			<div class="row">
 				<div class="card-group">
@@ -44,14 +43,14 @@
 							      		<input type="number" name="productQuantity" id="productQuantity<?php echo $key?>" min="0" value="<?php echo $orderQuant ?>" class="form-control productQuantityCart">
 							      		<button class="btn btn-primary btn-sm" onclick="addToCart(<?php echo $key?>)" >Update Order</button>	
 							      		<h6>Product Price: $<span id="cart_prod_price_each"><?php echo $prod['price_each'] ?></span> </h6>
-							      		<h6>Subtotal: $<span id="cart_prod_subtotal">><?php echo $orderQuant * $prod['price_each'] ?></span></h6>
+							      		<h6>Subtotal: $<span id="cart_prod_subtotal"><?php echo $orderQuant * $prod['price_each'] ?></span></h6>
 							    	</div>
 							  	</li>
 							</ul>
 							<hr>
 					<?php 
-						}//if 0 orders, wont show in cart
-						}//foreach $result
+								}//if 0 orders, wont show in cart
+							}//foreach $result
 						}//foreach $cartItems  
 					?>
 					</div>

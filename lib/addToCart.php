@@ -3,6 +3,8 @@
 	// if(isset($_POST['prod_id']) && $_POST['prod_quant']){
 		$id = $_POST['prod_id'];
 		$quantity = $_POST['prod_quant'];
+		$price_each = $_POST['price_each'];
+		$subtotal = $quantity * $price_each;
 		$_SESSION['cart'][$id] = $quantity;
 
 		// update the total quantity of items to be purchased

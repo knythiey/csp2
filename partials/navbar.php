@@ -85,7 +85,7 @@
 	     	<?php } ?>
 	     	<?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){  ?>
 	     		<li class="nav-item">
-	     			<a class="nav-link" href="registerProduct.php">REGISTER PRODUCT</a>
+	     			<a class="nav-link" href="registerProduct.php">ADD ITEM</a>
 	     		</li>
 	     	<?php } ?>
 	    </ul>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2018 at 10:56 AM
+-- Generation Time: May 18, 2018 at 11:09 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -54,7 +54,7 @@ CREATE TABLE `ordered_items` (
   `product_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `subtotal` double(11,2) NOT NULL,
+  `subtotal` decimal(11,2) NOT NULL,
   `date_purchased` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -69,7 +69,7 @@ CREATE TABLE `orders` (
   `referrence_number` varchar(255) NOT NULL,
   `payment_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `total` double(11,2) NOT NULL,
+  `total` decimal(11,2) NOT NULL,
   `status_id` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -101,7 +101,7 @@ INSERT INTO `order_status` (`id`, `status`) VALUES
 CREATE TABLE `payments` (
   `id` int(11) NOT NULL,
   `payment_type` int(11) NOT NULL,
-  `amount` double(11,2) NOT NULL
+  `amount` decimal(11,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -165,22 +165,6 @@ CREATE TABLE `product_feedback` (
   `product_rating` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transaction`
---
-
-CREATE TABLE `transaction` (
-  `ordered_items_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `quantity_ordered` int(11) NOT NULL,
-  `date_purchased` varchar(255) NOT NULL,
-  `price_each` double(11,2) NOT NULL,
-  `order_subtotal` double(11,2) NOT NULL,
-  `transaction_total` double(11,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -315,12 +299,6 @@ ALTER TABLE `product_feedback`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `transaction`
---
-ALTER TABLE `transaction`
-  ADD KEY `transaction_fk0` (`ordered_items_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -437,12 +415,6 @@ ALTER TABLE `products`
 --
 ALTER TABLE `product_feedback`
   ADD CONSTRAINT `product_feedback_fk0` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `transaction`
---
-ALTER TABLE `transaction`
-  ADD CONSTRAINT `transaction_fk0` FOREIGN KEY (`ordered_items_id`) REFERENCES `ordered_items` (`id`);
 
 --
 -- Constraints for table `users`

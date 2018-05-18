@@ -62,6 +62,13 @@ Need to start Cart.
 Finished cart logic, update almost done but need to add AJAX on product subtotal.
 Need to start deleting items from cart.
 
+[may 18, 2018 @5pm Tuitt]
+finished logic of adding, updating, and deleting from cart with ajax on navbar cart item display, ajax on subtotal on updates, ajax on total price upon update.
+need to add logic if 0 items on cart, will display another another message.
+will start checkout.
+
+
+
 
 
 

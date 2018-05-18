@@ -162,3 +162,13 @@ h1 {
 	width: 13%;
 	display:inline-block;
 }
+
+.cart-container {
+	position: relative;
+	display:block;
+}
+
+#delete-cart-item{
+	position: absolute;
+	right: 0;
+}

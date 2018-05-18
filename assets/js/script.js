@@ -199,7 +199,15 @@ $(document).ready(function(){
 	//PRODUCT PAGE //
 	/////////////////
 
-})//$document.ready
+	/////////////////
+	//  CART PAGE  //
+	/////////////////
+
+	/////////////////
+	//  CART PAGE  //
+	/////////////////
+
+});//$document.ready
 	
 	//shows how much quantity to add to cart
 	function showAddQuantity(pId) {
@@ -213,11 +221,73 @@ $(document).ready(function(){
 	function addToCart(pId){
 		var prod_id = pId;
 		var quantity = $("#productQuantity" + prod_id).val();
+		var price_each = $("#price_each" + prod_id).html();
 
+		//updates navbar item count
 		$.ajax({
 			url: "lib/addToCart.php",
 			method: "POST",
-			data: {"prod_id": prod_id, "prod_quant": quantity},
+			data: {"prod_id": prod_id, "prod_quant": quantity, "price_each" : price_each},
+			success: function(data){
+				$("#itemCount").html(data);
+			}
+		});
+
+		//updates subtotal cart
+		$.ajax({
+			url: "lib/subtotalCart.php",
+			method: "POST",
+			data: {"prod_id" : pId, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#cart_prod_subtotal" + prod_id).html(data);
+
+			}
+		});
+
+		//updates totalprice
+		$.ajax({
+			url: "lib/totalPriceCart.php",
+			method: "POST",
+			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#totalPriceCart").html(data);
+			}
+		});
+	};
+
+	//Logic for deleting item from cart
+	function deleteCartItem(pId){
+		var prod_id = pId;
+		var quantity = $("#productQuantity" + prod_id).val();
+		var price_each = $("#price_each"+ prod_id).html();
+
+		//removed item from view
+		$.ajax({
+			url: "lib/deleteProdCart.php",
+			method: "POST",
+			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#itemDelMsg").html(data);
+				$("#productQuantity" + prod_id).val(0);
+				$("#cart-item-container" + prod_id).toggle();
+			}
+		})
+
+		//update total price when deleting item
+		$.ajax({
+			url: "lib/delProdTotal.php",
+			method: "POST",
+			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#totalPriceCart").html(data);
+			}
+		});
+
+		//updates navbar cart items when deleting item from cart
+		$.ajax({
+			url: "lib/remFromCart.php",
+			method: "POST",
+			data: {"prod_id": prod_id, "prod_quant": quantity, "price_each" : price_each},
 			success: function(data){
 				$("#itemCount").html(data);
 			}

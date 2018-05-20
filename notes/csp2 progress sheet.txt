@@ -68,9 +68,17 @@ need to add logic if 0 items on cart, will display another another message.
 will start checkout.
 
 [may 19, 2018 7am @jayr's]
-finsihed upadted profile logic with confirm password during updating
+finished upadted profile logic with confirm password during updating
 finished cart logic until checkout. jsut need to finshed database input with orderitems.php. also currently making referrence number;
 
+[may 20, 2018, 945am @jayr's]
+finished logic for adding datas into ordered items, orders table, and receipt page. 
+finished refnumgenerator
+need to add email_sender, composer.php.
+*add functionalities to item.php ad to cart, update cartbtn, checkoutbtn*
+pls add function to have value on the home page
+pls add sort function
+pls add on admin profile to see the transaction datas of all users
 
 
 

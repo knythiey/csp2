@@ -6,6 +6,7 @@
 		function getTitle(){
 			echo "Checkout Page";
 		}
+
 	?>
 </head>
 <body>
@@ -18,7 +19,7 @@
 				<div class="col-md-6 col-sm-12">
 					<h3>Shipping Details</h3>
 					<div class="container" id="shippingDetails">
-						<form action="orderedItems.php" method="POST">
+						<form action="lib/orderedItems.php" method="POST">
 					<?php  
 						$user_id = $_SESSION['user_id'];
 

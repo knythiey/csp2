@@ -43,6 +43,7 @@
 
 	foreach ($ord_id_result as $order_items) { //foreach for order_id that was recently made
 		$ord_id = $order_items['id'];
+		$_SESSION['order_id'] = $ord_id;
 
 		$cartItems = $_SESSION['cart'];
 			foreach ($cartItems as $prod_id => $orderQuant) { //foreach for getting the prod_id
@@ -68,5 +69,5 @@
 				$_SESSION['date_purchased'] = $ordItem_row['date_purchased'];
 		 	} 
 		}
-	header("Location: ../receipt.php");		
+	header("Location: email_sending.php");		
 ?>

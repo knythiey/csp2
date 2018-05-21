@@ -125,7 +125,7 @@ $(document).ready(function(){
 		}
 	})
 
-	// button is disabled until all fields are properly filled logic
+	// register button is disabled until all fields are properly filled logic
 	$("#createUsername, #confirmPassword, #userEmail, #firstName, #lastName, .radioGender").on("change", function(){
 		if(checkUsername == true && checkPassword == true && checkEmail == true && checkFirstname == true && checkLastname == true && checkGender == true) {
 			$("#registerbtn").attr("disabled", false);
@@ -133,6 +133,7 @@ $(document).ready(function(){
 			$("#registerbtn").attr("disabled", true);
 		}
 	})
+
 	/////////////////
 	//REGISTER PAGE//
 	/////////////////
@@ -140,6 +141,7 @@ $(document).ready(function(){
 	/////////////////
 	//   PROFILE   //
 	/////////////////
+	
 	$("#deactBtn").on("click", function(){
 		$(this).toggle();
 		$("#validateDeactivateUser").toggle();
@@ -181,14 +183,14 @@ $(document).ready(function(){
 		}
 	});
 
-		// button is disabled until all fields are properly filled logic
+	// button is disabled until all fields are properly filled logic
 	$("#createUsername, #oldPassword, #userEmail, #firstName, #lastName, .radioGender").on("change", function(){
 		if(checkUsername == true && checkOldPassword == true && checkEmail == true && checkFirstname == true && checkLastname == true && checkGender == true) {
 			$("#updateUserBtn").attr("disabled", false);
 		} else {
 			$("#updateUserBtn").attr("disabled", true);
 		}
-	})	
+	});	
 
 	/////////////////
 	//UPDATEPROFILE//
@@ -200,25 +202,45 @@ $(document).ready(function(){
 	/////////////////
 
 	//for read more, and read less on descriptions
-	var descMaxLen = 70;
-	$(".show-read-more").each(function(){
-		var myStr = $(this).text();
-		if($.trim(myStr).length > descMaxLen){
-			var newStr = myStr.substring(0, descMaxLen);
-			var removedStr = myStr.substring(descMaxLen, $.trim(myStr).length);
-			$(this).empty().html(newStr);
-			// $(this).append('<a href = "javascript: void(0);" class="show-more"> show more . . .</a>');
-			$(this).append('<a href ="#" class="show-more"> show more . . .</a>');
-			$(this).append('<span class="more-text">'+ removedStr + '<a href="javascript:void(0)" class="show-less"> show less</a>' +'</span>');			
-			// $(this).append('<span class="more-text">'+ removedStr + '<a href="#" class="show-less"> show less</a>' +'</span>');			
-		}
-	});
+	// var descMaxLen = 70;
+	// $(".show-read-more").each(function(){
+	// 	var myStr = $(this).text();
+	// 	if($.trim(myStr).length > descMaxLen){
+	// 		var newStr = myStr.substring(0, descMaxLen);
+	// 		var removedStr = myStr.substring(descMaxLen, $.trim(myStr).length);
+	// 		$(this).empty().html(newStr);
+	// 		// $(this).append('<a href = "javascript: void(0);" class="show-more"> show more . . .</a>');
+	// 		$(this).append('<a href="#showMoreDesc" data-toggle="modal" class="show-more"> show more . . .</a>');
+	// 		// $(this).append('<span class="more-text">'+ removedStr + '<a href="javascript:void(0)" class="show-less"> show less</a>' +'</span>');			
+	// 	}
+	// });
 
-	$(".show-more").on("click", function(){
-		$(this).siblings(".more-text").contents().unwrap();
-		$(".show-more").toggle();
-	});
+	// $(".show-more").on("click", function(){
+	// 	$(this).siblings(".more-text").contents().unwrap();
+	// 	$(".show-more").toggle();
+	// });
+	
+	// $("#ps4SortBtn").on("click", function(){
+	// 	$.ajax({
+	// 		url: "lib/ps4Cat.php",
+	// 		method: "POST",
+	// 		data: {},
+	// 		sucess:function(data){
+	// 			$("#categoryName").html(data);
+	// 		}
+	// 	})
+	// })
 
+	// $("#noSortBtn").on("click", function(){
+	// 	$.ajax({
+	// 		url: "lib/noSort.php",
+	// 		method: "POST",
+	// 		data: {},
+	// 		sucess:function(data){
+	// 			$("categoryName").html(data);
+	// 		}
+	// 	})
+	// })
 	/////////////////
 	//  HOME PAGE  //
 	/////////////////
@@ -227,15 +249,10 @@ $(document).ready(function(){
 	//PRODUCT PAGE //
 	/////////////////
 
-	$("#delProdBtn").on("click", function(){
-		$("#confirmDelProd").toggle();
-		$(this).toggle();
-	})
-
 	$("#closeDelProd").on("click", function(){
 		$("#confirmDelProd").toggle();
 		$("#delProdBtn").toggle()
-	})
+	});
 
 	/////////////////
 	//PRODUCT PAGE //
@@ -244,6 +261,7 @@ $(document).ready(function(){
 	/////////////////
 	//  CART PAGE  //
 	/////////////////
+	checkCart();
 
 	/////////////////
 	//  CART PAGE  //
@@ -272,6 +290,7 @@ $(document).ready(function(){
 			data: {"prod_id": prod_id, "prod_quant": quantity, "price_each" : price_each},
 			success: function(data){
 				$("#itemCount").html(data);
+				checkCart();
 			}
 		});
 
@@ -312,6 +331,7 @@ $(document).ready(function(){
 				$("#itemDelMsg").html(data);
 				$("#productQuantity" + prod_id).val(0);
 				$("#cart-item-container" + prod_id).toggle();
+				checkCart();
 			}
 		})
 
@@ -322,6 +342,7 @@ $(document).ready(function(){
 			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
 			success: function(data){
 				$("#totalPriceCart").html(data);
+				checkCart();
 			}
 		});
 
@@ -332,6 +353,17 @@ $(document).ready(function(){
 			data: {"prod_id": prod_id, "prod_quant": quantity, "price_each" : price_each},
 			success: function(data){
 				$("#itemCount").html(data);
+				checkCart();
 			}
 		});
 	}
+
+	//checks if cart has items or not
+	function checkCart(){
+		var itemCount = parseInt($("#itemCount").html());
+		if(itemCount > 0){
+			$("#checkoutBtn").prop("disabled", false);
+		} else {
+			$("#checkoutBtn").prop("disabled", true);
+		}	
+	};

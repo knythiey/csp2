@@ -9,11 +9,13 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
+	<div class="main-wrapper login-bg">
 		
-		<h1>Register Product Page</h1>
 		<div class="container registerProduct-form">
-			<form action="lib/createProduct.php" method="POST" enctype="multipart/form-data">
+			<div class="login-header">
+				<h2>Register Product</h2>
+			</div>
+			<form action="lib/createProduct.php" method="POST" enctype="multipart/form-data" class="registerProduct-cont">
 				<p><?php 
 					if(isset($_SESSION['uploadMsg'])){
 						echo $_SESSION['uploadMsg'];

@@ -6,14 +6,23 @@
 	margin:0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Roboto Slab', serif;
 }
 
 /*************************/
 /*	 	CSS VARIABLES	 */
 /*************************/
 :root {
-	--main-background-color: #33ff33;
-	--navbar-background-color: #343a40;
+	--main-background-color: #f0f0f0;
+	--navbar-background-color: #c0c0c0;
+}
+
+/*************************/
+/*	 	   Navbar 		 */
+/*************************/
+.navbar {
+	letter-spacing: 1.3px;
+	background-color: #c0c0c0; !important
 }
 
 /*************************/
@@ -23,11 +32,23 @@
 .main-wrapper {
 	background-color: var(--main-background-color);
 	height: auto;
+	padding: 30px 0;
 }
 
 h1 {
 	text-align: center;
 }
+
+h2 {
+	text-align: center;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-shadow: -1 0 white,
+		  0 1 white,
+		  1 0 white,
+		  0 -1 white; 	
+}
+
 /*************************/
 /*	 	Main Footer 	 */
 /*************************/
@@ -38,10 +59,122 @@ h1 {
 }
 
 /*************************/
+/*	 		Login 	     */
+/*************************/
+
+.login-bg {
+	padding-top: 70px;
+	height: auto;
+	font-family: 'Poppins', sans-serif;
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
+	background-attachment: fixed;
+	padding-bottom: 20px;
+}
+
+.login-form-container {
+	margin: 0 auto;
+	width: 40%;
+	text-align: center;
+	border: 1px solid #999;
+	padding: 4%;
+	border-radius: 10px;
+	height: auto;
+	background-color: white;
+	color: black;
+}
+
+.login-header > h2 {
+	font-size: 4rem;
+	letter-spacing: 3px;
+	font-weight: bolder;
+}
+
+.form-username, .form-password {
+	text-align: left;
+	font-size: 1.4rem;
+}
+
+.form-login-label {
+	display: block;
+	text-align: left;
+	font-size: 1.5rem;
+	font-weight: normal;
+	background:transparent;
+	margin-bottom: 15px;
+}
+
+.form-login-input {
+	outline: none; !important;
+	box-shadow: none; !important;
+	border:none;
+	margin-left: 15px;
+}
+
+hr {
+	height: 1px;
+	border-top: 2px solid #c0c0c0;
+}
+
+.forgotPassword > a {
+	text-decoration: none;
+	color: black;
+}
+
+.forgotPassword > a:hover {
+	color: blue;
+}
+
+.login-form-btn {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	padding: 10px;
+	background-color: #286090;
+	color: white;
+	margin-top: 20px;
+}
+
+.login-form-btn:hover {
+	background-color:blue;
+	box-shadow: none; !important;
+	outline: none; !important;
+}
+
+.login-signup-btn:hover {
+	background-color: blue;
+	box-shadow: none; !important;
+	outline: none; !important;
+}
+
+/***************************/
+/*			Modal		   */
+/***************************/
+
+/* Style the horizontal ruler */
+hr {
+    /*border: 1px solid #999;*/
+    /*width: 70%;*/
+    margin: 0 auto 25px;
+}
+
+/*************************/
 /*	 	  Register  	 */
 /*************************/
 .register-form {
 	height: auto;
+	width: 50%;
+	border: 1px solid #999;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.register-form > form > .form-group {
+	width: 70%;
+	margin: 10px auto;
 }
 
 /*************************/
@@ -93,22 +226,64 @@ h1 {
 /*************************/
 
 .card {
-	width: 18rem;
+	width: 19rem;
 	margin-bottom: 15px;
 	min-height: 550px;
-	max-height: auto;
+	height: auto;
 }
 
 .home-prod-img {
-	height: 370px;
+	height: 350px;
+	transition: all .2s ease-in-out;
 }
 
-.more-text {
-	display: none;
+.home-prod-img:hover {
+	transform: scale(1.02);
 }
 
+.card-title {
+	letter-spacing: 1.5px;
+	font-weight: bold;
+	text-align: center;
+
+}
+.price_each {
+	letter-spacing: 1.5px;
+	font-weight: bolder;
+}
+#indProdDesc {
+	letter-spacing: 1.2px;
+}
+
+.card-body {
+	position: relative;
+}
+
+#showQuantityBtn  {
+	position:absolute;
+	bottom: 15px;
+	right: 20px;
+}
+
+#productInfoBtn {
+	position:absolute;
+	bottom: 15px;
+}
 .show-less {
 	display: inline;
+}
+
+.item-container {
+	border: 2px solid #999;
+	box-shadow: 0 0 10px #c0c0c0,
+				0 0 20px #c0c0c0,
+				0 0 30px #c0c0c0,
+				0 0 40px #c0c0c0,
+				0 0 50px white,
+				0 0 60px white;
+	margin: 0 auto 15px;
+	height: 650px;
+	max-height: auto;
 }
 
 /*CART*/
@@ -122,30 +297,63 @@ h1 {
 .productQuantity {
 	width: 40%;
 	display:inline-block;
+	margin: 0;
+	padding: 7px;
+
+}
+
+.addCart{
+	margin: 0;
+	padding: 7.5px;
+	padding-bottom: 6px;
 }
 
 /*************************/
 /*	 	  Product 	  	 */
 /*************************/
 .product-container {
-	border:1px solid blue;
 	padding-bottom: 15px;
+	position: relative;
+	width: 70%;
 }
 
 .prod-left-cont {
-	border: 1px solid yellow;
-	padding: 0;
+	padding: 10px 0;
+	text-align: center;
 }
 
+
 .prod-right-cont {
-	border: 1px solid violet;
-	padding: 0;
+	padding: 10px;
+	letter-spacing: 1px;
 }
 
 .prod-display-image {
-	border: 1px solid red;
-	width: 60%;
-	height: 480px;
+	border: 3px solid #999;
+	width: 70%;
+	height: 450px;
+	box-shadow: 0 0 10px #c0c0c0,
+				0 0 20px #c0c0c0,
+				0 0 30px #c0c0c0,
+				0 0 40px #c0c0c0,
+				0 0 50px white,
+				0 0 60px white;
+	border-radius: 10px;
+	transition: all .4s ease-in-out;
+}
+
+.prod-display-image:hover {
+	transform: scale(1.03);
+}
+
+.product-name {
+	font-weight: bolder;
+	letter-spacing: 2px;
+}
+
+.product-price{
+	font-weight: bolder;
+	letter-spacing: 2px;
 }
 
 #closeDelProd {
@@ -159,17 +367,42 @@ h1 {
 }
 
 #confirmDelProd {
-	display: none;
-	position:relative;
-	border: 1px solid red;
-	text-align: center;
+	margin: 0 auto;
+}
+
+#admin_update_prod_cont {
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+/*************************/
+/*	 	Reg Product   	 */
+/*************************/
+
+.registerProduct-form {
+	border: 1px solid #c0c0c0;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px 20px;
+	width: 60%;
+}
+
+.registerProduct-cont {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#prodDesc {
+	min-height: 200px;
+	max-height: 400px;
 }
 /*************************/
 /*	 	  Cart  	 	 */
 /*************************/
 
 .cart-display-image {
-	border: 1px solid red;
+	border:1px solid #999;
 	width: 20%;
 	height: 300px;
 }
@@ -206,10 +439,55 @@ h1 {
 	text-align: center;
 }
 
+.totalPrice {
+	letter-spacing: 2px;
+	font-weight: bolder;
+}
+
 /*************************/
 /*	 	  Receipt 	  	 */
 /*************************/
+.receipt-main-cont{
+	background-color: white;
+}
 
 .receipt-cont {
+	text-align: center;
+}
+
+.referenceNum-receipt {
+	font-weight: bolder;
+	letter-spacing: 1px;
+}
+
+.cust-details-cont {
+	text-align: center;
+	padding-bottom: 45px;
+	
+}
+
+.cust-details-rct {
+	margin: 15px 10px 5px;
+	text-align: left;
+	border-radius: 10px;
+	border: 1px solid #999;
+	background-color: #c0c0c0;
+	height: auto;
+	padding: 15px;
+}
+
+.cust-details-rct > p {
+	font-size: 1.2rem;
+}
+
+.rct-order-items{
+	padding: 0;
+}
+
+.rct-img{
+	width: 50%;
+	display: inline;
+}
+.order-status-rct {
 	text-align: center;
 }

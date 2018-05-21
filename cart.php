@@ -13,7 +13,13 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		
-		<h1> Cart Page</h1>
+		<h2> <?php
+			if(isset($_SESSION['current_user'])){
+		 		echo ucfirst($_SESSION['current_user']) . "'s";
+			} else {
+				echo "My ";
+			}
+		 ?> Cart</h2>
 		<hr>
 		<?php if(isset($_SESSION['cart'])){ 
 			  $cartItems = $_SESSION['cart'];
@@ -48,7 +54,7 @@
 							      		<p><?php echo $prod['description'] ?></p>
 							      		<span>Quantity Order: </span>
 							      		<input type="number" name="productQuantity" id="productQuantity<?php echo $key?>" min="0" value="<?php echo $orderQuant ?>" class="form-control productQuantityCart">
-							      		<button class="btn btn-primary btn-sm" onclick="addToCart(<?php echo $key?>)">Update Order</button>	
+							      		<button class="btn btn-primary " onclick="addToCart(<?php echo $key?>)" id="addToCart">Update Order</button>	
 							      		<h6>Product Price: $<span id="price_each<?php echo $key ?>"><?php echo $prod['price_each'] ?></span></h6>
 							      		<h6>Subtotal: $<span id="cart_prod_subtotal<?php echo $key ?>"><?php echo $orderQuant * $prod['price_each'] ?></span></h6>
 							    	</div>
@@ -61,7 +67,7 @@
 							}//if 0 orders, wont show in cart
 						}//foreach $cartItems  
 					?>
-					<h5>TOTAL PRICE: $<span id="totalPriceCart">
+					<h5 class="totalPrice">TOTAL PRICE: $<span id="totalPriceCart">
 							<?php 
 								if(isset($_SESSION['totalPrice']))
 								echo $_SESSION['totalPrice'];
@@ -69,7 +75,7 @@
 						 	?> 
 						</span> 
 					</h5>
-					<a href="checkout.php"><button class="btn btn-primary">Checkout</button></a>
+					<a href="checkout.php"><button class="btn btn-primary" id="checkoutBtn" disabled>Checkout</button></a>
 					</div>
 				</div>
 				</div>

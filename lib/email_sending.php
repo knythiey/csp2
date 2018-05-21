@@ -1,22 +1,28 @@
 <?php
-	
+	session_start();
 	USE PHPMailer\PHPMailer\PHPMailer; // actual phpmailer lib
 	USE PHPMailer\PHPMailer\Exception; // for error handling
 
 	require '../vendor/autoload.php'; // loads the dependencies you downloaded
+	$userEmail = $_SESSION['user_email'];
+	$userFullName = $_SESSION['checkoutFname'] . ' '. $_SESSION['checkoutLname'];
+	$order_id = " " .$_SESSION['order_id'];
 
 	// Sender
-	$email_sender = 'kevinsalvino@gmail.com'; // this should be an existing email acct.
-	$email_password = ''; // password of your email_sender
+	$email_sender = 'kynt.sample@gmail.com'; // this should be an existing email acct.
+	$email_password = '4175801Kynt'; // password of your email_sender
 
-	$from_mail = "kevinski_academy@kevinski.com";
-	$from_name = "Grow Veggies"; // name of sender
+	$from_mail = "Admin_Kynt@kynt.com";
+	$from_name = "Admin_Kynt"; // name of sender
 
 	// Receiver
-	$to_email = "michaelallenmateo@gmail.com";
-	$to_name = "Mike";
-	$mail_subject = "Hi Pogi!";
-	$mail_body = "<p>Congratulations! You just won $1,000,000!!! Please go to www.meatspin.com to claim your price.</p>";
+	$to_email = "kynt.sample@gmail.com";
+	$to_name = "$userFullName";
+	$mail_subject = "Receipt of your order with order number " . $order_id;
+	$ref_num = $_SESSION['reference_number'];
+
+	$mail_body = "<p>Thank you for purchasing from Kynt's Gadgets. Here is the reference number [ " . $ref_num . " ]</p>";
+	
 
 	// Sending the email part
 	$mail = new PHPMailer(true);
@@ -55,5 +61,7 @@
 	} catch (Exception $error) {
 		echo "Message couldn't be sent. Mail error " . $mail->ErrorInfo;
 	}
+
+	header("Location: ../receipt.php");
 
 ?>

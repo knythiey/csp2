@@ -9,11 +9,8 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
-		
-		<h1> Login Page</h1>
-
-		<div class="container">
+	<div class="main-wrapper login-bg">
+		<!-- <div class="container login-bg"> -->
 			<p>
 				<?php 
 					if(isset($_SESSION['invalid_credentials_msg'])){
@@ -21,8 +18,35 @@
 					}
 				?>
 			</p>
+			<div class="container login-form-container">
+				<div class="login-header">
+					<h2>Login</h2>
+				</div>
+				<form action="lib/validateLogin.php" method="POST">
+					<div class="form-username">
+						<label for="username" class="form-login-label">Username</label>
+						<span><i class="fas fa-user"></i></span> <input type="text" name="loginUsername" id="loginUsername" placeholder="Enter Username" class="form-login-input" required>
+					</div>
+					<hr>
+					<div class="form-password">
+						<label for="password" class="form-login-label">Password</label>
+						<span><i class="fas fa-lock"></i></span> <input type="password" name="loginPassword" id="loginPassword" placeholder="Enter Password" class="form-login-input" required>
+					</div>
+					<hr>
+					<div class="forgotPassword clearfix">
+						<a href="index.php" class="float-left"> Back to Home</a>
+						<a href="#" class="float-right">Forgot Password?</a>
+					</div>
+						
+					<button type="submit" class="btn btn-primary" class="login-form-btn">Log In</button>
+				</form>
 
-			<form action="lib/validateLogin.php" method="POST">
+				<p>No account yet? Register now!</p>
+				<a href="register.php"><button class="btn btn-primary login-signup-btn" id="modalBtn">Register</button></a>
+			</div>
+		<!-- </div> -->
+
+			<!-- <form action="lib/validateLogin.php" method="POST">
 				<div class="form-group">
 					<label for="username">Username: </label>
 					<input type="text" name="loginUsername" id="loginUsername" placeholder="Enter Username" class="form-control" required>
@@ -31,9 +55,8 @@
 					<label for="username">Password: </label>
 					<input type="password" name="loginPassword" id="loginPassword" placeholder="Enter Password" class="form-control" required>
 				</div>
-				<button type="submit" class="btn btn-primary">Log In</button>
-			</form>
-		</div>
+				
+			</form> -->
 	<?php 
 		$_SESSION['invalid_credentials_msg'] = "";	
 	?>

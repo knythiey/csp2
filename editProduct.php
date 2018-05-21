@@ -14,11 +14,11 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
+	<div class="main-wrapper login-bg">
 		<?php foreach ($result as $key) { ?>
-
-		<h1>Update Product Page</h1>
-		<div class="container updateProduct-form">
+	
+		<div class="container registerProduct-form">
+			<h2>Update Product <?php echo $key['product_name']?></h2>
 			<form action="lib/updateProduct.php" method="POST" enctype="multipart/form-data">
 				<p><?php 
 					if(isset($_SESSION['productUpdatedMsg'])){

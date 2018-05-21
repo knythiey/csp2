@@ -80,6 +80,10 @@ pls add function to have value on the home page
 pls add sort function
 pls add on admin profile to see the transaction datas of all users
 
+[may 20, 2018 9pm]
+added ang install composer php
+
+
 
 
 

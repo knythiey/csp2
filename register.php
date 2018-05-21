@@ -11,11 +11,13 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
+	<div class="main-wrapper login-bg">
 		
-		<h1>Register Page</h1>
 		<div class="container register-form">
 			<form action="lib/createUser.php" method="POST">
+				<div class="login-header">
+					<h2>Register</h2>
+				</div>
 
 				<div class="form-group">
 					<label for="username">Username:* </label><small id="usernameAvail"> (min.5 max.32 characters)</small>
@@ -49,8 +51,8 @@
 
 				<div class="form-group">
 					<label for="gender">Gender:* </label>
-					<input type="radio" name="gender" value="male" class="radioGender" required> Male
-					<input type="radio" name="gender" value="female" class="radioGender"> Female
+					Male <input type="radio" name="gender" value="male" class="radioGender" required>
+					Female <input type="radio" name="gender" value="female" class="radioGender">
 				</div>
 
 				<div class="form-group">

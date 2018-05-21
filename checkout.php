@@ -13,7 +13,7 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		
-		<h1> Checkout Page</h1>
+		<h2>Checkout</h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
@@ -52,7 +52,7 @@
 							</div>
 							<div class="form-group">
 								<label for="totalAmount">Total Amount: </label>
-								<h5>$<span id=""><?php echo $_SESSION['totalPrice'] ?></span></h5>
+								<h5 class="totalPrice">$<span id=""><?php echo $_SESSION['totalPrice'] ?></span></h5>
 							</div>
 					<?php
 						}//foreach $user_result
@@ -93,7 +93,7 @@
 							}//foreach $prod_result
 						}//foreach $cartItems 
 					?>
-					<p>Total Price: $<span><?php echo $_SESSION['totalPrice'] ?></span></p>
+					<h5 class="totalPrice">Total Price: $<span><?php echo $_SESSION['totalPrice'] ?></span></h5>
 					<?php
 					}//if isset
 					?>	

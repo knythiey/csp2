@@ -241,6 +241,19 @@ $(document).ready(function(){
 	// 		}
 	// 	})
 	// })
+	
+	$("#searchBarInput").on("keypress", function(){
+		var search = $(this).val();
+		$.ajax({
+			url: "lib/search.php",
+			method: "POST",
+			data: {"key_word" : search},
+			success: function(data){
+				$(".home-container").html(data);
+			}
+		});
+	});
+
 	/////////////////
 	//  HOME PAGE  //
 	/////////////////
@@ -257,6 +270,26 @@ $(document).ready(function(){
 	/////////////////
 	//PRODUCT PAGE //
 	/////////////////
+
+	//////////////////
+	//EDITPROD PAGE //
+	//////////////////
+	$("#uploadNewImgBtn").on("click", function(){
+		$("#uploadNewImgForm").toggle();
+		$("#updateProdImgSize").prop("disabled", false);
+		$("#updateProdImg").prop("disabled", false);
+	})
+
+	$("#closeUploadNewImgForm").on("click", function(){
+		$("#uploadNewImgForm").toggle();
+		$("#updateProdImgSize").prop("disabled", true);
+		$("#updateProdImg").prop("disabled", true);
+	})
+
+	//////////////////
+	//EDITPROD PAGE //
+	//////////////////
+
 
 	/////////////////
 	//  CART PAGE  //

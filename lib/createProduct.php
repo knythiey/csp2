@@ -26,7 +26,7 @@
 	    header("Location: registerProduct.php"); 
 	}
 	
-	if($_FILES["prodImg"]["size"] > 10000000) {
+	if($_FILES["prodImg"]["size"] > 2097152) {
 	    $_SESSION['uploadMsg'] = "Sorry, your file is too large.";
 	    $uploadOk = 0;
 	    header("Location: registerProduct.php");

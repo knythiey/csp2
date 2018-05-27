@@ -51,7 +51,7 @@
 				<div class="form-group">
 					<label for="prodCategory">Product Category:</label><small>currently <?php echo $key['name']  ?></small>
 					<br>
-					<select name="updateProdCat" id="updateProdCat">
+					<select name="updateProdCat" id="updateProdCat" class="form-control">
 						<option value="1" required>PS4</option>
 						<option value="2">XBOX One</option>
 						<option value="3">Nintendo Switch </option>
@@ -60,10 +60,14 @@
 						<option value="6">Nintendo Switch Accessory</option>
 					</select>
 				</div>	
-				
-				<div class="form-group">
-					<label for="prodImg">Upload A New Product Image</label><small> current img - <?php echo $key['product_image'] ?></small><br> 
-					<input type="file" name="updateProdImg" id="updateProdImg">
+
+				<button id="uploadNewImgBtn" type="button" class="btn btn-info my-3">Upload New image</button>
+				<br>
+				<div class="form-group" id="uploadNewImgForm">
+					<button class="btn btn-warning"type="button" id="closeUploadNewImgForm">X</button>
+					<label for="prodImg">Upload A New Product Image</label><small> current img - <?php echo $key['product_image'] ?></small><br>
+					<input type="hidden" name="MAX_FILE_SIZE" value="3145728" id="updateProdImgSize" disabled> 
+					<input type="file" name="updateProdImg" id="updateProdImg" class="form-control" disabled>
 				</div>
 		
 				<button class="btn btn-primary" type="submit" name="submit">Update Product</button>

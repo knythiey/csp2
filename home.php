@@ -11,12 +11,6 @@
 <body>
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
-		<nav aria-label="breadcrumb">
-		  <ol class="breadcrumb">
-		    <li class="breadcrumb-item active">Home</li>
-		  </ol>
-		</nav>
-		<hr>
 		<h2 id="categoryName">
 			<?php 
 				if(isset($_SESSION['category_title'])){
@@ -28,6 +22,12 @@
 		</h2>
 		
 		<div class="container home-container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+			    	<li class="breadcrumb-item active">Home</li>
+				</ol>
+			</nav>
+			<hr>
 			<?php 
 				if(isset($_SESSION['deleteDbConfirm']) && isset( $_SESSION['user_type'])){
 					if($_SESSION['user_type'] == "admin"){
@@ -68,29 +68,30 @@
 											<?php 
 												$desc = $key['description'];
 											  	//checks to see if desc is more than 70 chracters, will cut the last sentence. then adds read more else, will just display the description normally.
-											  	if(strlen($desc) > 70 ){
-													$parts = preg_split('/([\s\n\r]+)/', $desc, null, PREG_SPLIT_DELIM_CAPTURE);
-												  	$parts_count = count($parts);
+											  // 	if(strlen($desc) > 70 ){
+													// $parts = preg_split('/([\s\n\r]+)/', $desc, null, PREG_SPLIT_DELIM_CAPTURE);
+												 //  	$parts_count = count($parts);
 
-												  	$width = 100;
-												  	$length = 0;
-												  	$last_part = 0;
-												  	$last_taken = 0;
-												  	foreach($parts as $part){
-												    	$length += strlen($part);
-												   		if ( $length > $width ){
-												        	break;
-												    	}
-												    	++$last_part;
-												    	if ( $part[strlen($part)-1] == '.' ){
-												        	$last_taken = $last_part;
-												    	}
-												  	}
-												  	$result = implode(array_slice($parts, 0, $last_taken));
-												  	echo $result. ".." . "<a href='#showMoreDesc" . $key["id"] ."' data-toggle='modal'> read more</a>";
-											  	} else {
-											  		echo $desc;
-											  	}
+												 //  	$width = 100;
+												 //  	$length = 0;
+												 //  	$last_part = 0;
+												 //  	$last_taken = 0;
+												 //  	foreach($parts as $part){
+												 //    	$length += strlen($part);
+												 //   		if ( $length > $width ){
+												 //        	break;
+												 //    	}
+												 //    	++$last_part;
+												 //    	if ( $part[strlen($part)-1] == '.' ){
+												 //        	$last_taken = $last_part;
+												 //    	}
+												 //  	}
+												 //  	$result = implode(array_slice($parts, 0, $last_taken));
+												 //  	echo $result. ".." . "<a href='#showMoreDesc" . $key["id"] ."' data-toggle='modal'> read more</a>";
+											  // 	} else {
+											  // 		echo $desc;
+											  // 	}
+											  echo $desc;
 											?>
 										</p>
 										<div class="modal fade" id="showMoreDesc<?php echo $key['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="LongProductDesc" aria-hidden="true">
@@ -133,6 +134,6 @@
 			  unset($_SESSION['category']);
 			  unset($_SESSION['category_title']);
 		?>
-	</div>
+	</div><!--main-wrapper-->
 	<?php include "partials/footer.php"; ?>
 <?php include "partials/foot.php"; ?>

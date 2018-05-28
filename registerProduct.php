@@ -58,6 +58,7 @@
 				
 				<div class="form-group">
 					<label for="prodImg">Upload Product Image</label>
+					<input type="hidden" name="MAX_FILE_SIZE" value="3145728">
 					<input type="file" name="prodImg" id="prodImg">
 				</div>
 		

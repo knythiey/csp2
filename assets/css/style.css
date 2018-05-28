@@ -253,6 +253,10 @@ hr {
 }
 #indProdDesc {
 	letter-spacing: 1.2px;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: clip;
+	width: 250px;
 }
 
 .card-body {
@@ -376,6 +380,26 @@ hr {
 	top: 7px;
 }
 
+#updateProdCat {
+	width: 25%;
+}
+
+#updateProdImg {
+	width: 35%;
+}
+
+#uploadNewImgForm {
+	display:none;
+	position: relative;
+}
+
+#closeUploadNewImgForm {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 30px;
+	font-size: .6rem;	
+}
 /*************************/
 /*	 	Reg Product   	 */
 /*************************/

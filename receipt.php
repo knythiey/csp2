@@ -83,7 +83,6 @@
 			<a href="home.php"><button class="btn btn-primary">Back to Home</button></a>
 		</div>
 		<?php 
-			//unset cart
 			unset($_SESSION['cart']);
 			unset($_SESSION['subtotal']);
 			unset($_SESSION['itemCountCart']);

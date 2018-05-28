@@ -242,14 +242,14 @@ $(document).ready(function(){
 	// 	})
 	// })
 	
-	$("#searchBarInput").on("keypress", function(){
+	$("#searchBarInput").on("blur", function(){
 		var search = $(this).val();
 		$.ajax({
 			url: "lib/search.php",
 			method: "POST",
 			data: {"key_word" : search},
 			success: function(data){
-				$(".home-container").html(data);
+				$(".catalog-items").html(data);
 			}
 		});
 	});

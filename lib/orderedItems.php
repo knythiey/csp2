@@ -36,7 +36,7 @@
 	$_SESSION['reference_number'] = $refNum;
 	// Receipt for the order
 	$rcpt_query = "INSERT INTO orders(reference_number, payment_id, user_id, total) VALUES('$refNum','$payment_type', '$user_id', '$totalPrice')";
-	$rcpt_result = mysqli_query($conn, $rcpt_query);		
+	$rcpt_result = mysqli_query($conn, $rcpt_query);	
 
 	$ord_id_query = "SELECT * FROM orders WHERE reference_number = '$refNum'";
 	$ord_id_result = mysqli_query($conn, $ord_id_query);

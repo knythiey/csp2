@@ -21,7 +21,10 @@
 	$mail_subject = "Receipt of your order with order number " . $order_id;
 	$ref_num = $_SESSION['reference_number'];
 
-	$mail_body = "<p>Thank you for purchasing from Kynt's Gadgets. Here is the reference number [ " . $ref_num . " ]</p>";
+	$mail_body = "<p>Thank you for purchasing from Kynt's Gadgets. Here is the reference number [ " . $ref_num . " ]</p>
+			<br>
+			<p>This is a system generated email. Don't reply to this email. Have a good day!</p>
+		";
 	
 
 	// Sending the email part
@@ -59,9 +62,7 @@
 		$mail->send();
 
 	} catch (Exception $error) {
-		echo "Message couldn't be sent. Mail error " . $mail->ErrorInfo;
+		echo "Message couldn't be sent. Mail error" . $mail->ErrorInfo;
 	}
-
-	header("Location: ../receipt.php");
-
-?>
+	echo '<script>window.location.href="../receipt.php" </script>';
+	?>

@@ -201,6 +201,11 @@ hr {
 	display: inline-block;
 }
 
+#allUsersDropdown {
+	margin: 0 auto;
+	width: 60%;
+}
+
 /*************************/
 /*	   Update Profile	 */
 /*************************/

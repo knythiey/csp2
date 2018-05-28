@@ -35,7 +35,7 @@
 					}
 				}
 			?>
-			<div class="row">
+			<div class="row catalog-items">
 				<div class="card-group">
 					<?php
 							if(!isset($_SESSION['category']) || empty($_SESSION['category'])){

@@ -83,7 +83,11 @@ pls add on admin profile to see the transaction datas of all users
 [may 20, 2018 9pm]
 added ang install composer php
 
-
+[may 29, 2018 4:45am]
+notify when adding to cart, deleting, loging in, loging out, creating user
+error messages needs to be flash
+pictures should link to the product
+product display on admin profile, senseless, find a way to make it more relevant
 
 
 

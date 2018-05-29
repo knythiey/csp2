@@ -31,7 +31,7 @@
 	$mail = new PHPMailer(true);
 	// Settings
 	try {
-		$mail->SMTPDebug = 4; // level of debug message 4 is lowest, 1 is the highest
+		// $mail->SMTPDebug = 4; // level of debug message 4 is lowest, 1 is the highest
 		$mail->isSMTP(); // makes sure to use SMTP (Simple Mail Transfer Protocol) to mail.
 		$mail->SMTPOptions = array( // custom connection options 
 			'ssl' => array(
@@ -64,5 +64,5 @@
 	} catch (Exception $error) {
 		echo "Message couldn't be sent. Mail error" . $mail->ErrorInfo;
 	}
-	echo '<script>window.location.href="../receipt.php" </script>';
+	header("location: ../receipt.php");
 	?>

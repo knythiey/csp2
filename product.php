@@ -59,7 +59,7 @@
 			<hr>
 			<div class="row">
 				<div class="col-md-6 col-sm-12 prod-left-cont">
-					<img src="<?php echo $key['product_image'] ?> " alt="product image" class="image-fluid prod-display-image">
+					<img src="<?php echo $key['product_image'] ?> " alt="product image" class="img-fluid prod-display-image">
 				</div>
 				<div class="col-md-6 col-sm-12 prod-right-cont">
 					<h3>Category : <span  class="product-name"><?php echo $key['name'] ?></span></h3>

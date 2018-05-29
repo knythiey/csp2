@@ -152,6 +152,55 @@ $(document).ready(function(){
 		$("#validateDeactivateUser").toggle();
 	});
 
+	$("#allUsersDropdown").on("blur", function(){
+		var user_id = $(this).find('option:selected').val();
+		$.ajax({
+			url: "lib/showTransHistAdmin.php",
+			method: "POST",
+			data: {"user_id" : user_id},
+			success: function(data){
+				$("#showDateCont").html(data);
+				$("#purchDateProfAdmin").css("display", "block");
+					//2nd ajax
+					$("#datePurchHistAdmin").on("blur", function(){
+					var ord_id = $(this).find('option:selected').val();
+					$.ajax({
+						url: "lib/showTransHistUser.php",
+						method: "POST",
+						data: {"ord_id" : ord_id},
+						success: function(data){
+							$("#resultCont").html(data);
+						}
+					})
+				});
+			}
+		})
+	});
+
+	$("#allProdDropdown").on("blur", function(){
+		var prod_id = $(this).find('option:selected').val();
+		$.ajax({
+			url: "lib/adminShowProd.php",
+			method: "POST",
+			data: {"prod_id" : prod_id},
+			success: function(data){
+				$("#resultCont").html(data);
+			}
+		})
+	});
+
+	$("#datePurchHistUsers").on("blur", function(){
+		var ord_id = $(this).find('option:selected').val();
+		$.ajax({
+			url: "lib/showTransHistUser.php",
+			method: "POST",
+			data: {"ord_id" : ord_id},
+			success: function(data){
+				$("#resultCont").html(data);
+			}
+		})
+	});
+
 	/////////////////
 	//   PROFILE   //
 	/////////////////

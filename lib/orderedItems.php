@@ -63,7 +63,7 @@
 				$ins_orderedItems_result = mysqli_query($conn, $ins_orderedItems_query);
 
 				//query to get date purchased
-				$date_purch_query = "SELECT * FROM ordered_items WHERE order_id = '$ord_id'";
+				$date_purch_query = "SELECT * FROM orders WHERE reference_number = '$refNum'";
 				$date_purch_result = mysqli_query($conn,$date_purch_query);
 				$ordItem_row = mysqli_fetch_assoc($date_purch_result);
 				$_SESSION['date_purchased'] = $ordItem_row['date_purchased'];

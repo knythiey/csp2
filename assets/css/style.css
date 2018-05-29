@@ -202,8 +202,39 @@ hr {
 }
 
 #allUsersDropdown {
-	margin: 0 auto;
-	width: 60%;
+	/*margin: 0 auto;*/
+	width: 70%;
+}
+
+.left-side-profile{
+	text-align: center;
+	border: 1px solid red;
+}
+
+.right-side-profile{
+	border: 1px solid blue;
+}
+
+#adminShowProdImg {
+	height: 300px;
+	width: 70%;
+}
+
+#showTransHistUserImg {
+	height: 100px;
+	width: 100px;
+}
+
+table, td, th, tr {
+	/*border: 1px solid black;*/
+	border-collapse: collapse;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+}
+
+#purchDateProfAdmin{
+	display: none;
 }
 
 /*************************/

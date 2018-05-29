@@ -11,33 +11,71 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper" style="text-align: center;">
+	<div class="main-wrapper container" style="text-align: center;">
 		<?php if(isset($_SESSION['invalid_credentials_msg'])){
 							echo $_SESSION['invalid_credentials_msg'];
 						} 
 		?>
 		<h1> Profile Page</h1>
-		<h2 style="text-align: center;">Welcome, <?php echo $_SESSION['current_user'] ?>!</h2>
+		<h2 style="text-align: center;">Welcome, <?php echo ucfirst($_SESSION['current_user']) ?>!</h2>
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-7 left-side-profile">
+				<?php if($_SESSION['user_type'] == 'admin') {?>
+				<h4><?php echo $_SESSION['current_user'] ?> Admin Panel</h4>
 				<div class="row">
-					<div class="col-md-6">
-						<label for="allUsersDropdown">Select User</label>
+					<div class="col-md-3">
+						<label for="allUsersDropdown">User Transaction History: </label>
+						<label for="showDateCont" id="purchDateProfAdmin">Purchase Date</label>
+						<label for="allProdDropdown">Select Product: </label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-8">
 						<select name="allUsers" id="allUsersDropdown" class="form-control">
 							<?php  
-								$query_users = "SELECT * FROM users";
-								$query_result = mysqli_query($conn, $query_users);
-								foreach ($query_result as $usersKey) {
+								$users_query = "SELECT * FROM users WHERE user_type=2";
+								$users_result = mysqli_query($conn, $users_query);
+								foreach ($users_result as $usersKey) {
 							?>
 								<option value="<?php echo $usersKey['id'] ?>"><?php echo $usersKey['username'] ?></option>
 							<?php } ?>
 						</select>
+						<div id="showDateCont"></div>
+						<select name="allProd" id="allProdDropdown" class="form-control">
+							<?php 
+								$prod_query = "SELECT * FROM products";
+								$prod_result = mysqli_query($conn, $prod_query);
+								foreach ($prod_result as $prodsKey) {
+							?>
+							<option value="<?php echo $prodsKey['id'] ?>"><?php echo $prodsKey['product_name'] ?></option>
+							<?php } ?>
+						</select>
 					</div>
 				</div>
+				<?php } //if admin 
+						if($_SESSION['user_type'] == 'user'){
+				?>
+				<h4><?php echo ucfirst($_SESSION['current_user']) ?>'s Panel</h4>
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Transaction History</h3>
+					</div>
+					<div class="col-md-6">
+						<select name="datePurchHistUsers" id="datePurchHistUsers" class="form-control">
+							<?php 
+								$user_id = $_SESSION['user_id'];
+								$date_purch_query = "SELECT * FROM orders WHERE user_id = '$user_id'";
+								$date_purch_result =mysqli_query($conn, $date_purch_query);
+								foreach ($date_purch_result as $ordKey) {
+							?>
+							<option value="<?php echo $ordKey['id'] ?>"><?php echo $ordKey['date_purchased'] ?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+				<?php }//if user_type == user ?>
+				<div id="resultCont" class="container">
+				</div>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-5 right-side-profile">
 				<?php 
 					if(isset($_SESSION['user_id']) && $_SESSION['user_status'] == 1){
 					$user_id = $_SESSION['user_id'];
@@ -56,10 +94,6 @@
 							<tr>
 								<td>User ID : </td>
 								<td><?php echo $key['id']  ?></td>
-							</tr>
-							<tr>
-								<td>Password :</td>
-								<td><?php echo $key['password']  ?></td>
 							</tr>
 							<tr>
 								<td>Email : </td>

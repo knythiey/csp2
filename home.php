@@ -10,31 +10,29 @@
 </head>
 <body>
 	<?php include "partials/navbar.php"; ?>
-	<div class="main-wrapper">
+	<div class="main-wrapper my-0 pt-1">
 		<h2 id="categoryName">
 			<?php 
 				if(isset($_SESSION['category_title'])){
 					echo $_SESSION['category_title'];
-				} else if(!isset($_SESSION['category_title'])) {
-					echo "Catalog";
 				}
 			 ?>
 		</h2>
 		
 		<div class="container home-container">
 			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
+				<ol class="breadcrumb py-1 mb-1">
 			    	<li class="breadcrumb-item active">Home</li>
 				</ol>
 			</nav>
 			<hr>
-			<?php 
-				if(isset($_SESSION['deleteDbConfirm']) && isset( $_SESSION['user_type'])){
-					if($_SESSION['user_type'] == "admin"){
-					echo $_SESSION['deleteDbConfirm'];
-					}
-				}
-			?>
+				<?php 
+					if(isset($_SESSION['deleteDbConfirm']) && isset($_SESSION['user_type'])){
+						if($_SESSION['user_type'] == "admin"){ ?>
+							<div class="alert alert-primary" role="alert">
+								<?php echo $_SESSION['deleteDbConfirm']; ?>
+							</div>
+				<?php } } ?>
 			<div class="row catalog-items">
 				<div class="card-group">
 					<?php

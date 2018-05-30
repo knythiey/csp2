@@ -14,7 +14,7 @@
 /*************************/
 :root {
 	--main-background-color: #f0f0f0;
-	--navbar-background-color: #c0c0c0;
+	--navbar-background-color: #e50d23;
 }
 
 /*************************/
@@ -22,7 +22,72 @@
 /*************************/
 .navbar {
 	letter-spacing: 1.3px;
-	background-color: #c0c0c0; !important
+	background-color: #e50d23; !important
+}
+
+.navbar a{
+	color:white;
+	font-size: 1.1rem;
+}
+
+.navbar a:hover{
+	color:black;
+}
+
+#topNavbar {
+	background: black;
+}
+
+.topNavbar-left {
+	float:left;
+	padding: 5px 0 5px 5%;
+	margin-bottom: 0;
+}
+
+
+#topNavbar > ul > li {
+	list-style: none;
+}
+
+.social-media-topnavbar {
+	display: inline;
+	font-size: 1.1rem;
+}
+
+.social-media-topnavbar > a {
+	text-decoration: none;
+}
+
+.social-media-topnavbar > a > i {
+	color: #c0c0c0;
+	margin: 0 3px;
+}
+.social-media-topnavbar > a > i:hover {
+	color: #e50d23;
+}
+
+#topNavbar > ul > li > a {
+	color: white;
+	margin: 0 5px;
+}
+
+#topNavbar > ul > li > a:hover {
+	text-decoration: none;
+	color: #e50d23;
+}
+
+.topNavbar-right {
+	float:right;
+	padding: 5px 3% 5px 0;
+	margin-bottom: 0;
+}
+
+.topNavbar-right > li {
+	display: inline;
+}
+
+div.dropdown-menu.show {
+	background: var(--navbar-background-color);
 }
 
 /*************************/

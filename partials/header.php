@@ -13,6 +13,21 @@
 
 	<!-- import bootstrap stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+	<!-- import owl carousel CSS Local-->
+	<link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
+	<!-- import owl carousel CSS CDN-->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
+	
+	<!--import animate.css local -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!--import animate.css CDN  -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
+	
 
 	<!-- import custom stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">

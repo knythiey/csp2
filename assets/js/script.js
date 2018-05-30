@@ -152,7 +152,7 @@ $(document).ready(function(){
 		$("#validateDeactivateUser").toggle();
 	});
 
-	$("#allUsersDropdown").on("blur", function(){
+	$("#allUsersDropdown").on("change", function(){
 		var user_id = $(this).find('option:selected').val();
 		$.ajax({
 			url: "lib/showTransHistAdmin.php",
@@ -162,7 +162,7 @@ $(document).ready(function(){
 				$("#showDateCont").html(data);
 				$("#purchDateProfAdmin").css("display", "block");
 					//2nd ajax
-					$("#datePurchHistAdmin").on("blur", function(){
+					$("#datePurchHistAdmin").on("change", function(){
 					var ord_id = $(this).find('option:selected').val();
 					$.ajax({
 						url: "lib/showTransHistUser.php",
@@ -177,7 +177,7 @@ $(document).ready(function(){
 		})
 	});
 
-	$("#allProdDropdown").on("blur", function(){
+	$("#allProdDropdown").on("change", function(){
 		var prod_id = $(this).find('option:selected').val();
 		$.ajax({
 			url: "lib/adminShowProd.php",
@@ -189,7 +189,7 @@ $(document).ready(function(){
 		})
 	});
 
-	$("#datePurchHistUsers").on("blur", function(){
+	$("#datePurchHistUsers").on("change", function(){
 		var ord_id = $(this).find('option:selected').val();
 		$.ajax({
 			url: "lib/showTransHistUser.php",
@@ -249,49 +249,8 @@ $(document).ready(function(){
 	/////////////////
 	//	HOME PAGE  //
 	/////////////////
-
-	//for read more, and read less on descriptions
-	// var descMaxLen = 70;
-	// $(".show-read-more").each(function(){
-	// 	var myStr = $(this).text();
-	// 	if($.trim(myStr).length > descMaxLen){
-	// 		var newStr = myStr.substring(0, descMaxLen);
-	// 		var removedStr = myStr.substring(descMaxLen, $.trim(myStr).length);
-	// 		$(this).empty().html(newStr);
-	// 		// $(this).append('<a href = "javascript: void(0);" class="show-more"> show more . . .</a>');
-	// 		$(this).append('<a href="#showMoreDesc" data-toggle="modal" class="show-more"> show more . . .</a>');
-	// 		// $(this).append('<span class="more-text">'+ removedStr + '<a href="javascript:void(0)" class="show-less"> show less</a>' +'</span>');			
-	// 	}
-	// });
-
-	// $(".show-more").on("click", function(){
-	// 	$(this).siblings(".more-text").contents().unwrap();
-	// 	$(".show-more").toggle();
-	// });
 	
-	// $("#ps4SortBtn").on("click", function(){
-	// 	$.ajax({
-	// 		url: "lib/ps4Cat.php",
-	// 		method: "POST",
-	// 		data: {},
-	// 		sucess:function(data){
-	// 			$("#categoryName").html(data);
-	// 		}
-	// 	})
-	// })
-
-	// $("#noSortBtn").on("click", function(){
-	// 	$.ajax({
-	// 		url: "lib/noSort.php",
-	// 		method: "POST",
-	// 		data: {},
-	// 		sucess:function(data){
-	// 			$("categoryName").html(data);
-	// 		}
-	// 	})
-	// })
-	
-	$("#searchBarInput").on("blur", function(){
+	$("#searchBarInput").on("change", function(){
 		var search = $(this).val();
 		$.ajax({
 			url: "lib/search.php",
@@ -348,6 +307,28 @@ $(document).ready(function(){
 	/////////////////
 	//  CART PAGE  //
 	/////////////////
+
+	// sample owl
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
 
 });//$document.ready
 	

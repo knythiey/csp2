@@ -1,11 +1,14 @@
 	<!-- import jQuery -->
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
+	<!-- import owl carousel js local -->
+<!-- 	<script src="assets/owlcarousel/docs/assets/vendors/jquery.min.js"></script> -->
+	<script src="assets/owlcarousel/dist/owl.carousel.min.js"></script>
+	
 	<!-- import bootstrap js -->
 	<script type="text/javascript" src="assets/css/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- import owl carousel js local -->
-	<script src="assets/owlcarousel/owl.carousel.min.js"></script>
+	
 	<!-- import custom script local -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
 	

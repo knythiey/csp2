@@ -33,18 +33,51 @@
 								<?php echo $_SESSION['deleteDbConfirm']; ?>
 							</div>
 				<?php } } ?>
-
-			<div class="owl-carousel owl-theme">
-			    <div class="item"><img class="img-thumbnail" src="assets/img/nswitchbundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/nswitchmodysbundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/ps4bundle.png" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/ps4mhwbundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxoneaorigbundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
-			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			<div class="container owl-container">
+				<div class="owl-featured owl-carousel owl-theme">
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/nswitchbundle.jpg" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="animated fadeInLeft" id="owl-featured-prodName">Nintendo Switch Bundle</h3>
+				    		<h4 class="animated fadeInUp" id="owl-featured-prodPrice">USD 300</h4>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/nswitchmodysbundle.jpg" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="" id="owl-featured-prodName">Mario Odyssey Bundle</h3>
+				    		<h4 class="" id="owl-featured-prodPrice">USD 350</h4>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/ps4bundle.png" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="" id="owl-featured-prodName">PS4 Bundle</h3>
+				    		<h4 class="" id="owl-featured-prodPrice">USD 400</h4>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/ps4mhwbundle.jpg" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="" id="owl-featured-prodName">Monster Hunter:World Bundle</h3>
+				    		<h4 class="" id="owl-featured-prodPrice">USD 399</h4>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/xboxoneaorigbundle.jpg" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="" id="owl-featured-prodName">Assassin's Creed Bundle</h3>
+				    		<h4 class="" id="owl-featured-prodPrice">USD 370</h4>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt="">
+				    	<div class="item-caption">
+				    		<h3 class="" id="owl-featured-prodName">Xbox One Bundle</h3>
+				    		<h4 class="" id="owl-featured-prodPrice">USD 279</h4>
+				    	</div>
+				    </div>
+				</div>
 			</div>
 
 			<div class="row catalog-items">

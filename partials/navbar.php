@@ -28,14 +28,14 @@
 		<?php } ?>
 	</ul>
 </div>
-<nav class="navbar navbar-expand-lg py-4">
-	<a class="navbar-brand" href="home.php"><i class="fas fa-gamepad"></i> GameHub</a>
+<nav class="navbar navbar-expand-lg py-5">
+	<a class="navbar-brand" href="home.php"><img src="assets/img/logocsp2.png" alt="brand logo" id="brandlogo"> <span class="brandname">Game<button class="btn btn-dark brandnamebtn"><span class="brandnamebtntext">HUB</span></button></span></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
   	</button>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       	<input class="form-control mr-sm-1" type="search" id="searchBarInput" placeholder="Search">
-    </form>
+    </form> -->
 
 	<div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto">

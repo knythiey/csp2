@@ -20,8 +20,57 @@
 /*************************/
 /*	 	   Navbar 		 */
 /*************************/
+#brandlogo {
+	width: 100px;
+	height: 90px;
+	position: absolute;
+	left: 50px;
+	top: -65px;
+}
+
+.brandname {
+	position: absolute;
+	font-size: 2.5rem;
+	text-shadow: -1px 0 black,
+				 0 1px black,
+				 1px 0 black,
+				 0 -1px black;
+	left: 50px;
+	top: -10px;
+}
+
+.brandname:hover {
+	position: absolute;
+	font-size: 2.5rem;
+	text-shadow: -1px 0 white,
+				 0 1px white,
+				 1px 0 white,
+				 0 -1px white;
+	left: 50px;
+}
+
+.brandnamebtn {
+	border: 1px solid white;
+	border-radius: 50px;
+}
+
+.brandnamebtntext {
+	font-size: 2.5rem;
+	/*text-shadow: -1px 0 red,
+				 0 1px red,
+				 1px 0 red,
+				 0 -1px red;*/
+	letter-spacing: 2px;
+	font-weight: bolder;
+	color: var(--navbar-background-color);
+}
+
+.navbar-brand {
+	position:relative;
+}
+
 .navbar {
-	letter-spacing: 1.3px;
+	letter-spacing: 2px;
 	background-color: #e50d23; !important
 }
 
@@ -36,6 +85,7 @@
 
 #topNavbar {
 	background: black;
+	letter-spacing: 1.5px;
 }
 
 .topNavbar-left {
@@ -219,10 +269,7 @@ hr {
 /*			Modal		   */
 /***************************/
 
-/* Style the horizontal ruler */
 hr {
-    /*border: 1px solid #999;*/
-    /*width: 70%;*/
     margin: 0 auto 25px;
 }
 
@@ -325,6 +372,71 @@ table, td, th, tr {
 /*************************/
 /*	 	  	Home 	  	 */
 /*************************/
+
+.owl-container {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.owl-featured {
+	position: relative;
+}
+
+.owl-featured .item {
+	height: 450px;
+}
+.owl-featured .item img{
+	width: 85%;
+	height: 350px;
+	margin: 0 auto;
+}
+
+.owl-featured .item .item-caption {
+	position: absolute;
+	bottom:5%;
+	left: 10%;
+	font-weight: bold;
+	color: var(--navbar-background-color);
+}
+
+.owl-featured .owl-nav .owl-prev,
+.owl-featured .owl-nav .owl-next{
+	position: absolute;
+	top: 35%;
+}
+
+.owl-featured .owl-nav button.owl-next, 
+.owl-featured .owl-nav button.owl-prev {
+	background: var(--navbar-background-color);	
+}
+
+.owl-featured .owl-nav .owl-prev {
+	left: 8%;
+}
+
+.owl-featured .owl-nav .owl-next {
+	right: 8%;
+}
+
+.owl-featured .owl-dots {
+	position: absolute;
+	bottom: 15%;
+	right: 8%;
+
+}
+
+.owl-theme .owl-dots .owl-dot span{
+	background: var(--navbar-background-color);
+}
+
+.owl-theme .owl-dots .owl-dot:hover span{
+	background: black;
+}
+
+.owl-theme .owl-dots .owl-dot.active span{
+	background: white;
+}
 
 .card {
 	width: 19rem;

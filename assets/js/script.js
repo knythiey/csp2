@@ -313,9 +313,10 @@ $(document).ready(function(){
 	/////////////////
 	
 
-	$('.owl-carousel').owlCarousel({
+	$('.owl-featured').owlCarousel({
 	    items: 1,
 	    autoplay: true,
+	    navText:['<i class="fas fa-chevron-left fa-fw"></i>', '<i class="fas fa-chevron-right fa-fw"></i>'],
 	    loop: true,
 	    margin: 15,
 	    autoplayTimeout: 4000,
@@ -324,18 +325,30 @@ $(document).ready(function(){
 	    responsive:{
 	        0:{
 	            items:1,
-	            nav:true
+	            nav:true,
+	            loop:true
 	        },
 	        600:{
-	            items:3,
-	            nav:false
+	            items:1,
+	            nav:true,
+	            loop:true
 	        },
 	        1000:{
-	            items:3,
+	            items:1,
 	            nav:true,
-	            loop:false
+	            loop:true
 	        }
 	    }
+	});
+
+	$('.owl-featured').on('changed.owl.carousel', function(event){
+		//selecting the current active item
+		var item = event.item.index - 2;
+		//removing all animations from all captions
+		$('#owl-featured-prodName').removeClass("animated fadeInLeft");
+		$('#owl-featured-prodPrice').removeClass('animated fadeInUp');
+		$('.owl-item').not('.cloned').eq(item).find('#owl-featured-prodName').addClass('animated fadeInLeft');
+		$('.owl-item').not('.cloned').eq(item).find('#owl-featured-prodPrice').addClass('animated fadeInUp');
 	});
 	/////////////////
 	//     OWL     //

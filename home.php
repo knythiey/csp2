@@ -33,6 +33,20 @@
 								<?php echo $_SESSION['deleteDbConfirm']; ?>
 							</div>
 				<?php } } ?>
+
+			<div class="owl-carousel owl-theme">
+			    <div class="item"><img class="img-thumbnail" src="assets/img/nswitchbundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/nswitchmodysbundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/ps4bundle.png" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/ps4mhwbundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxoneaorigbundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			    <div class="item"><img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt=""></div>
+			</div>
+
 			<div class="row catalog-items">
 				<div class="card-group">
 					<?php

@@ -312,23 +312,31 @@ $(document).ready(function(){
 	//     OWL     //
 	/////////////////
 	
+
 	$('.owl-carousel').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    nav:true,
+	    items: 1,
+	    autoplay: true,
+	    loop: true,
+	    margin: 15,
+	    autoplayTimeout: 4000,
+    	autoplayHoverPause: true,
+	    responsiveClass:true,
 	    responsive:{
 	        0:{
-	            items:1
+	            items:1,
+	            nav:true
 	        },
 	        600:{
-	            items:3
+	            items:3,
+	            nav:false
 	        },
 	        1000:{
-	            items:5
+	            items:3,
+	            nav:true,
+	            loop:false
 	        }
 	    }
-	})
-	
+	});
 	/////////////////
 	//     OWL     //
 	/////////////////

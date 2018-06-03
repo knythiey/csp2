@@ -80,7 +80,9 @@
 }
 
 .navbar a:hover{
-	color:black;
+	background-color:var(--navbar-background-color);
+	color: black;
+
 }
 
 #topNavbar {
@@ -438,19 +440,21 @@ table, td, th, tr {
 	background: white;
 }
 
+
 .card {
-	width: 19rem;
 	margin-bottom: 15px;
-	min-height: 550px;
 	height: auto;
+	text-align: center;
 }
 
-.home-prod-img {
-	height: 350px;
+#home-prod-img {
+	margin-top: 10px;
+	height: 230px;
+	width: 60%;
 	transition: all .2s ease-in-out;
 }
 
-.home-prod-img:hover {
+#home-prod-img:hover {
 	transform: scale(1.02);
 }
 
@@ -458,12 +462,14 @@ table, td, th, tr {
 	letter-spacing: 1.5px;
 	font-weight: bold;
 	text-align: center;
+	color: var(--navbar-background-color);
 
 }
 .price_each {
 	letter-spacing: 1.5px;
 	font-weight: bolder;
 }
+
 #indProdDesc {
 	letter-spacing: 1.2px;
 	white-space: nowrap;
@@ -472,22 +478,29 @@ table, td, th, tr {
 	width: 250px;
 }
 
-.card-body {
-	position: relative;
+.category-title {
+	color: var(--navbar-background-color);
 }
 
-#showQuantityBtn  {
-	position:absolute;
-	bottom: 15px;
-	right: 20px;
+.nav-pills {
+	background-color: var(--navbar-background-color);
+	border: 1px solid #999;
+	border-radius: 2px;
 }
 
-#productInfoBtn {
-	position:absolute;
-	bottom: 15px;
+.nav-pills .nav-link.active {
+	background-color: white;
+	color:var(--navbar-background-color);
 }
-.show-less {
-	display: inline;
+
+.nav-link {
+	color:white;
+	letter-spacing: 1.2px;
+}
+
+.nav-link:hover {
+	color:var(--navbar-background-color);
+	background-color: black;
 }
 
 .item-container {
@@ -499,8 +512,24 @@ table, td, th, tr {
 				0 0 50px white,
 				0 0 60px white;
 	margin: 0 auto 15px;
-	height: 650px;
+	min-height: 400px;
 	max-height: auto;
+}
+
+
+.page-item.active .page-link{
+	color:var(--navbar-background-color);
+	background-color: white;
+}
+
+.page-item > a{
+	color:white;
+	background-color: var(--navbar-background-color);
+}
+
+.page-item > a:hover{
+	color:var(--navbar-background-color);
+	background-color:black;
 }
 
 /*CART*/
@@ -508,21 +537,19 @@ table, td, th, tr {
 .showQuantity {
 	display:none;
 	text-align: center;
-	padding-top: 15px;
 }
 
 .productQuantity {
 	width: 40%;
 	display:inline-block;
 	margin: 0;
-	padding: 7px;
 
 }
 
 .addCart{
 	margin: 0;
-	padding: 7.5px;
-	padding-bottom: 6px;
+	/*padding: 7.5px;*/
+	/*padding-bottom: 6px;*/
 }
 
 /*************************/

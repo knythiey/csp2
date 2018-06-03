@@ -67,7 +67,8 @@
 							}//if 0 orders, wont show in cart
 						}//foreach $cartItems  
 					?>
-					<h5 class="totalPrice">TOTAL PRICE: $<span id="totalPriceCart">
+					<h5 class="totalPrice">TOTAL PRICE: $
+						<span id="totalPriceCart">
 							<?php 
 								if(isset($_SESSION['totalPrice']))
 								echo $_SESSION['totalPrice'];

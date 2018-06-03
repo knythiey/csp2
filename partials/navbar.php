@@ -58,34 +58,21 @@
 		        </div>
 	      	</li>
 	     	<?php } ?>
-		
-	     	<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		        | <i class="fas fa-search"></i> Categories 
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          	<a class="dropdown-item" href="lib/ps4Cat.php">PS4</a>
-		          	<a class="dropdown-item" href="lib/xboxCat.php">XBOXONE</a>
-		          	<a class="dropdown-item" href="lib/switchCat.php">NINTENDO SWITCH</a>
-		        	<div class="dropdown-divider"></div>
-		          	<a class="dropdown-item" href="lib/ps4AccCat.php">PS4 ACCESORIES</a>
-		          	<a class="dropdown-item" href="lib/xboxAccCat.php">XBOXONE ACCESORIES</a>
-		          	<a class="dropdown-item" href="lib/switchAccCat.php">SWITCH ACCESORIES</a>
-		        </div>
-	      	</li>
 
 	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
 		     	<li class="nav-item">
 		        	<a class="nav-link" href="cart.php">
 		        		| <i class="fas fa-shopping-cart"></i> My Cart
 		        			(
+		        			<span id="itemCount">
 		        			<?php 
-		        				if(isset($_SESSION['itemCountCart'])){
-		        					echo $_SESSION['itemCountCart'];
+		        				if(isset($_SESSION['itemCount'])){
+		        					echo $_SESSION['itemCount'];
 		        				} else {
 		        					echo " 0 ";
 		        				}
 		        			?>
+		        			</span>
 		        			)
 		        	</a>
 		     	</li>

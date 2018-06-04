@@ -4,9 +4,9 @@
 		$id = $_POST['prod_id'];
 		unset($_SESSION['cart'][$id]);
 		unset($_SESSION['subtotal'][$id]);
-		$_SESSION['itemCountCart'] = array_sum($_SESSION['cart']);
-		echo $_SESSION['itemCountCart'];
+		$_SESSION['itemCount'] = array_sum($_SESSION['cart']);
+		echo $_SESSION['itemCount'];
 	} else {
-		echo "Invalid request. Can't be removed.";
+		echo "Invalid request. Item can't be removed.";
 	}
 ?>

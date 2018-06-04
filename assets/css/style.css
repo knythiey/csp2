@@ -9,6 +9,10 @@
 	font-family: 'Roboto Slab', serif;
 }
 
+p{
+	margin: 0;
+}
+
 /*************************/
 /*	 	CSS VARIABLES	 */
 /*************************/
@@ -294,25 +298,8 @@ hr {
 /*************************/
 /*	 	  Profile  	 	 */
 /*************************/
-#validateDeactivateUser {
-	display: none;
-	width: 50%; 
-	margin: 0 auto; 
-	text-align: left;
-	display: none;
-	position: relative;
-	padding: 0;
-}
-
-#closeDeact {
-	position: absolute;
-	right: 0;
-	top: 0;
-	font-size: .7rem;
-}
-
-#deactBtn {
-	display: inline-block;
+#invalid-credentials-msg {
+	text-align: center;
 }
 
 #allUsersDropdown {
@@ -323,10 +310,19 @@ hr {
 .left-side-profile{
 	text-align: center;
 	border: 1px solid red;
+	padding: 0;
 }
 
 .right-side-profile{
 	border: 1px solid blue;
+	text-align: center;
+}
+
+#profile-user-img {
+	width: 25%;
+	height:200px;
+	border-radius: 50%;
+	border:1px dashed #999;
 }
 
 #adminShowProdImg {
@@ -344,7 +340,7 @@ table, td, th, tr {
 	border-collapse: collapse;
 	text-align: center;
 	padding: 10px;
-	width: 100%;
+	/*width: 100%;*/
 }
 
 #purchDateProfAdmin{
@@ -688,6 +684,10 @@ table, td, th, tr {
 #delete-cart-item{
 	position: absolute;
 	right: 0;
+}
+
+#itemDelMsg {
+	text-align: center;
 }
 
 /*************************/

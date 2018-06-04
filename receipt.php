@@ -85,7 +85,7 @@
 		<?php 
 			unset($_SESSION['cart']);
 			unset($_SESSION['subtotal']);
-			unset($_SESSION['itemCountCart']);
+			unset($_SESSION['itemCount']);
 			unset($_SESSION['totalPrice']);
 		?>
 	</div>

@@ -141,16 +141,6 @@ $(document).ready(function(){
 	/////////////////
 	//   PROFILE   //
 	/////////////////
-	
-	$("#deactBtn").on("click", function(){
-		$(this).toggle();
-		$("#validateDeactivateUser").toggle();
-	});
-
-	$("#closeDeact").on("click", function(){
-		$("#deactBtn").toggle();
-		$("#validateDeactivateUser").toggle();
-	});
 
 	$("#allUsersDropdown").on("change", function(){
 		var user_id = $(this).find('option:selected').val();
@@ -360,9 +350,13 @@ $(document).ready(function(){
 	function showAddQuantity(pId) {
 		var prod_id = pId;
 		$("#showQuantity" + prod_id).toggle();
-		$("#quantMsg" + prod_id).html("");
-		// var prod_quantity = 
-		
+		$("#quantMsg" + prod_id).html("");	
+	}
+
+	function showAddQuantityCat(pId){
+		var prod_id = pId;
+		$("#showQuantityCat" + prod_id).toggle();
+		$("#quantMsgCat" + prod_id).html("");	
 	}
 
 	//logic for adding to cart
@@ -389,7 +383,6 @@ $(document).ready(function(){
 			data: {"prod_id" : pId, "prod_quant" : quantity, "price_each" : price_each},
 			success: function(data){
 				$("#cart_prod_subtotal" + prod_id).html(data);
-
 			}
 		});
 
@@ -410,6 +403,54 @@ $(document).ready(function(){
 			data: {"prod_id" : prod_id, "prod_quant" : quantity},
 			success: function(data){
 				$("#quantMsg" + prod_id).html(data);
+			}
+		})
+	};
+
+	//for categories to avoid errors on capturing datas from inputs
+	function addToCartCat(pId){
+		var prod_id = pId;
+		var quantity = $("#productQuantityCat" + prod_id).val();
+		var price_each = $("#price_eachCat" + prod_id).html();
+
+		//updates navbar item count
+		$.ajax({
+			url: "lib/addToCart.php",
+			method: "POST",
+			data: {"prod_id": prod_id, "prod_quant": quantity, "price_each" : price_each},
+			success: function(data){
+				$("#itemCount").html(data);
+				checkCart();
+			}
+		});
+
+		//updates subtotal cart
+		$.ajax({
+			url: "lib/subtotalCart.php",
+			method: "POST",
+			data: {"prod_id" : pId, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#cart_prod_subtotal" + prod_id).html(data);
+			}
+		});
+
+		//updates totalprice
+		$.ajax({
+			url: "lib/totalPriceCart.php",
+			method: "POST",
+			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
+			success: function(data){
+				$("#totalPriceCart").html(data);
+			}
+		});
+
+		//notifies user that item has been added to cart
+		$.ajax({
+			url: 'lib/userNotif.php',
+			method: "POST",
+			data: {"prod_id" : prod_id, "prod_quant" : quantity},
+			success: function(data){
+				$("#quantMsgCat" + prod_id).html(data);
 			}
 		})
 	};

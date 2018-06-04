@@ -21,14 +21,14 @@
 			}
 		 ?> Cart</h2>
 		<hr>
-		<?php if(isset($_SESSION['cart'])){ 
+		<?php if(isset($_SESSION['cart']) && count($_SESSION['cart'] != 0)){ 
 			  $cartItems = $_SESSION['cart'];
 			?>
-		<p id="itemDelMsg">
+		<div id="itemDelMsg">
 		<?php if(isset($_SESSION['itemDelMsg'])){
 			  	echo $_SESSION['itemDelMsg'] ;
 			  } ?>
-			  </p>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="card-group">
@@ -60,8 +60,8 @@
 							    	</div>
 							  	</li>
 							</ul>
-						</div><!--//cart-container-->
 							<hr>
+						</div><!--//cart-container-->
 					<?php 
 								}//foreach $result
 							}//if 0 orders, wont show in cart
@@ -83,7 +83,11 @@
 			</div>
 		</div><!--container-->
 		<!-- Displays if no cart items -->
-		<?php } else { ?>
+		<?php } else if(count($_SESSION['cart'] == 0)){ 
+				unset($_SESSION['cart']);
+				unset($_SESSION['subtotal']);
+				unset($_SESSION['totalPrice']);
+			?>
 		<div class="container">
 			<h4>Your Cart seems lonely. Checkout some of the products and add them to your cart.</h4>
 		</div>

@@ -83,16 +83,16 @@
 						<h2 class="category-title">Categories</h2>
 					</div>
 					<div class="card card-block">
-						<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<div class="nav flex-column nav-pills p-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 							<a class="nav-link active p-2 m-0" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab">Home</a>
-							<div class="dropdown-divider m-0"></div>
+							<div class="dropdown-divider"></div>
 						<?php 
 							$cat_query_left = "SELECT * FROM categories";
 							$cat_result_left = mysqli_query($conn, $cat_query_left);
 							foreach ($cat_result_left as $catNameLeft) { ?>
 							<a class="nav-link p-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-<?php echo $catNameLeft['id'] ?>" role="tab"><?php echo $catNameLeft['name'] ?>
 							</a>
-							<div class="dropdown-divider m-0"></div>
+							<div class="dropdown-divider"></div>
 						<?php } ?>
 						</div>
 					</div>	

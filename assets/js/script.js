@@ -152,14 +152,14 @@ $(document).ready(function(){
 				$("#showDateCont").html(data);
 				$("#purchDateProfAdmin").css("display", "block");
 					//2nd ajax
-					$("#datePurchHistAdmin").on("change", function(){
+					$("#datePurchHistAdmin").on("blur", function(){
 					var ord_id = $(this).find('option:selected').val();
 					$.ajax({
 						url: "lib/showTransHistUser.php",
 						method: "POST",
 						data: {"ord_id" : ord_id},
 						success: function(data){
-							$("#resultCont").html(data);
+							$("#resultContAdmin").html(data);
 						}
 					})
 				});
@@ -174,12 +174,12 @@ $(document).ready(function(){
 			method: "POST",
 			data: {"prod_id" : prod_id},
 			success: function(data){
-				$("#resultCont").html(data);
+				$("#resultContProd").html(data);
 			}
 		})
 	});
 
-	$("#datePurchHistUsers").on("change", function(){
+	$("#datePurchHistUsers").on("blur", function(){
 		var ord_id = $(this).find('option:selected').val();
 		$.ajax({
 			url: "lib/showTransHistUser.php",

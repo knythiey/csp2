@@ -13,6 +13,10 @@ p{
 	margin: 0;
 }
 
+.modal-lg {
+    max-width: 80% !important;
+}
+
 /*************************/
 /*	 	CSS VARIABLES	 */
 /*************************/
@@ -152,6 +156,7 @@ div.dropdown-menu.show {
 
 .main-wrapper {
 	background-color: var(--main-background-color);
+	min-height: 95vh;
 	height: auto;
 	padding: 30px 0;
 }
@@ -188,7 +193,7 @@ h2 {
 	height: auto;
 	font-family: 'Poppins', sans-serif;
 	background-color: #ffffff;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
+	/*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2380F'/%3E%3Cstop offset='1' stop-color='%23f40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");*/
 	background-attachment: fixed;
 	padding-bottom: 20px;
 }
@@ -201,8 +206,8 @@ h2 {
 	padding: 4%;
 	border-radius: 10px;
 	height: auto;
-	background-color: white;
-	color: black;
+	background-color: var(--navbar-background-color);
+	color: white;
 }
 
 .login-header > h2 {
@@ -247,16 +252,15 @@ hr {
 }
 
 .login-form-btn {
-	display: block;
-	margin: 0 auto;
-	width: 100%;
-	letter-spacing: 2px;
+	/*display: block;*/
+	/*width: 100%;*/
+/*	letter-spacing: 2px;
 	text-transform: uppercase;
 	border-radius: 30px;
 	padding: 10px;
 	background-color: #286090;
 	color: white;
-	margin-top: 20px;
+	margin-top: 20px;*/
 }
 
 .login-form-btn:hover {
@@ -302,20 +306,13 @@ hr {
 	text-align: center;
 }
 
+.profileCont {
+	padding-top: 50px;
+}
+
 #allUsersDropdown {
 	/*margin: 0 auto;*/
-	width: 70%;
-}
-
-.left-side-profile{
-	text-align: center;
-	border: 1px solid red;
-	padding: 0;
-}
-
-.right-side-profile{
-	border: 1px solid blue;
-	text-align: center;
+	width: 50%;
 }
 
 #profile-user-img {
@@ -328,6 +325,15 @@ hr {
 #adminShowProdImg {
 	height: 300px;
 	width: 70%;
+	transition: all .4s ease-in-out;
+}
+
+#adminShowProdImg:hover {
+	transform: scale(1.03);
+}
+
+.modalShowTransHeader {
+	text-align: center;
 }
 
 #showTransHistUserImg {
@@ -340,11 +346,35 @@ table, td, th, tr {
 	border-collapse: collapse;
 	text-align: center;
 	padding: 10px;
-	/*width: 100%;*/
+	width: 30%;
 }
 
 #purchDateProfAdmin{
 	display: none;
+}
+
+#tableContHist {
+	width:100%;
+	text-align: center;
+}
+
+.media {
+	border: 1px solid #999;
+	background-color: var(--navbar-background-color);
+	color: white;
+	border-radius: 10px;
+	letter-spacing: 1.5px;
+}
+
+#profileControlPanel {
+	border: 1px solid #999;
+	border-radius: 10px;
+	background-color: white;
+}
+
+#controlPanelTitle {
+	text-align: center;
+	color: var(--navbar-background-color);
 }
 
 /*************************/
@@ -497,6 +527,10 @@ table, td, th, tr {
 .nav-link:hover {
 	color:var(--navbar-background-color);
 	background-color: black;
+}
+
+.nav-pills .nav-link {
+	border-radius: 0px;
 }
 
 .item-container {
@@ -688,6 +722,11 @@ table, td, th, tr {
 
 #itemDelMsg {
 	text-align: center;
+}
+
+.cart-empty-msg{
+	text-align: center;
+	padding-top: 15%;
 }
 
 /*************************/

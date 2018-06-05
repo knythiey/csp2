@@ -38,11 +38,11 @@
 						<a href="#" class="float-right">Forgot Password?</a>
 					</div>
 						
-					<button type="submit" class="btn btn-primary" class="login-form-btn">Log In</button>
+					<button type="submit" class="btn btn-primary login-form-btn float-left">Log In</button>
+					<a href="register.php"class="btn btn-primary login-signup-btn float-right" id="modalBtn">Register</a>
 				</form>
 
 				<p>No account yet? Register now!</p>
-				<a href="register.php"><button class="btn btn-primary login-signup-btn" id="modalBtn">Register</button></a>
 			</div>
 		<!-- </div> -->
 

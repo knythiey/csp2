@@ -6,31 +6,33 @@
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_fetch_assoc($result);
 ?>
+	<hr class="m-2">
 	<div class="container">
-		<div class="row">
+		<div class="row modalShowTransHeader">
 			<div class="col-sm-6">
 				<h3>Order Id: <?php echo $row['ord_id'] ?></h3>
 			</div>
 			<div class="col-sm-6">
-				<h3>Total: USD <?php echo $row['total'] ?></h3>
+				<h3>Total: USD $<?php echo $row['total'] ?></h3>
 			</div>
 		</div>
 	</div>
 	<?php foreach ($result as $key) { ?>
-		<table class="table table-responsive table-border">
-			<tr>
-				<th>Product Image</th>
-				<th>Product Name</th>
-				<th>Quantity</th>
-				<th>Subtotal</th>
-			</tr>
-			<tr>
-				<td><img src="<?php echo $key['product_image'] ?>" alt="product_image" id="showTransHistUserImg" class="img-fluid img-thumbnail"></td>
-				<td><small><?php echo $key['product_name'] ?></small></td>
-				<td><small><?php echo $key['quantity'] ?></small></td>
-				<td><small>USD <?php echo $key['subtotal'] ?></small></td>
-			</tr>
-		</table>
+	<table class="table table-responsive table-border">
+		<tr>
+			<th>Product Image</th>
+			<th>Product Name</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+		</tr>
+		<tr>
+			<td><img src="<?php echo $key['product_image'] ?>" alt="product_image" id="showTransHistUserImg" class="img-fluid img-thumbnail"></td>
+			<td><small><?php echo $key['product_name'] ?></small></td>
+			<td><small><?php echo $key['quantity'] ?></small></td>
+			<td><small>USD $<?php echo $key['subtotal'] ?></small></td>
+		</tr>
+	</table>
 	<?php } ?>
-	<h4>Ref Num: <small>[<?php echo $row['reference_number'] ?>]</small></h4>
+	<hr>
+	<h5 class="modalShowTransHeader">Ref Num: <small>[<?php echo $row['reference_number'] ?>]</small></h5>
 	

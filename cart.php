@@ -21,7 +21,7 @@
 			}
 		 ?> Cart</h2>
 		<hr>
-		<?php if(isset($_SESSION['cart']) && count($_SESSION['cart'] != 0)){ 
+		<?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){ 
 			  $cartItems = $_SESSION['cart'];
 			?>
 		<div id="itemDelMsg">
@@ -83,12 +83,12 @@
 			</div>
 		</div><!--container-->
 		<!-- Displays if no cart items -->
-		<?php } else if(count($_SESSION['cart'] == 0)){ 
+		<?php } else { 
 				unset($_SESSION['cart']);
 				unset($_SESSION['subtotal']);
 				unset($_SESSION['totalPrice']);
 			?>
-		<div class="container">
+		<div class="container cart-empty-msg">
 			<h4>Your Cart seems lonely. Checkout some of the products and add them to your cart.</h4>
 		</div>
 		<?php } ?>

@@ -380,7 +380,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: "lib/subtotalCart.php",
 			method: "POST",
-			data: {"prod_id" : pId, "prod_quant" : quantity, "price_each" : price_each},
+			data: {"prod_id" : prod_id, "prod_quant" : quantity, "price_each" : price_each},
 			success: function(data){
 				$("#cart_prod_subtotal" + prod_id).html(data);
 			}

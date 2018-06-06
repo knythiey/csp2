@@ -86,10 +86,7 @@
 			<a href="home.php"><button class="btn btn-primary">Back to Home</button></a>
 		</div>
 		<?php 
-			// unset($_SESSION['cart']);
-			// unset($_SESSION['subtotal']);
-			// unset($_SESSION['itemCount']);
-			// unset($_SESSION['totalPrice']);
+			unset($_SESSION['cart'], $_SESSION['subtotal'], $_SESSION['itemCount'], $_SESSION['totalPrice']);
 		?>
 	</div>
 	<?php include "partials/footer.php"; ?>

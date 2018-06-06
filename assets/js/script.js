@@ -99,7 +99,7 @@ $(document).ready(function(){
 	$("#lastName").on("keyup", function(){
 		var lastName = $(this).val();
 		$.ajax({
-			url: "lib/validatelastname.php",
+			url: "lib/validateLastname.php",
 			method: "POST",
 			data: {"lastName" : lastName},
 			success: function(data){

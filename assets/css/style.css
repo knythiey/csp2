@@ -185,6 +185,12 @@ h2 {
 }
 
 /*************************/
+/*	 	  Index 	  	 */
+/*************************/
+#nologgedin_msg {
+	text-align: center;
+}
+/*************************/
 /*	 		Login 	     */
 /*************************/
 
@@ -198,22 +204,30 @@ h2 {
 	padding-bottom: 20px;
 }
 
+.invalid-credentials-msg {
+	text-align: center;
+}
+
 .login-form-container {
 	margin: 0 auto;
 	width: 40%;
 	text-align: center;
-	border: 1px solid #999;
 	padding: 4%;
 	border-radius: 10px;
 	height: auto;
-	background-color: var(--navbar-background-color);
-	color: white;
+	background-color: white;
+	letter-spacing: 1.5px;
 }
 
 .login-header > h2 {
 	font-size: 4rem;
 	letter-spacing: 3px;
 	font-weight: bolder;
+	color: var(--navbar-background-color);
+}
+
+.fa-user, .fa-lock {
+	color: var(--navbar-background-color);
 }
 
 .form-username, .form-password {
@@ -235,6 +249,8 @@ h2 {
 	box-shadow: none; !important;
 	border:none;
 	margin-left: 15px;
+	padding: 3px;
+	border-radius: 10px;
 }
 
 hr {
@@ -248,32 +264,34 @@ hr {
 }
 
 .forgotPassword > a:hover {
-	color: blue;
+	color: var(--navbar-background-color);
+}
+
+.noAccountRegister > a {
+	text-decoration: none;
+	color: black;
+}
+
+.noAccountRegister > a:hover {
+	color: var(--navbar-background-color);
 }
 
 .login-form-btn {
-	/*display: block;*/
-	/*width: 100%;*/
-/*	letter-spacing: 2px;
-	text-transform: uppercase;
-	border-radius: 30px;
-	padding: 10px;
-	background-color: #286090;
-	color: white;
-	margin-top: 20px;*/
+	width:40%;
+	margin: 20px 0;
+	background-color: var(--navbar-background-color);
+	outline:none;
+	border-color: white;
 }
+
 
 .login-form-btn:hover {
-	background-color:blue;
+	background-color:black;
+	color:white;
 	box-shadow: none; !important;
 	outline: none; !important;
 }
 
-.login-signup-btn:hover {
-	background-color: blue;
-	box-shadow: none; !important;
-	outline: none; !important;
-}
 
 /***************************/
 /*			Modal		   */
@@ -289,14 +307,32 @@ hr {
 .register-form {
 	height: auto;
 	width: 50%;
-	border: 1px solid #999;
-	border-radius: 10px;
 	background-color: #fff;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	letter-spacing: 1.2px;
+}
+
+.register-form > form > .form-group > label {
+	color:var(--navbar-background-color);
 }
 
 .register-form > form > .form-group {
 	width: 70%;
 	margin: 10px auto;
+}
+
+#registerbtn {
+	width: 50%;
+	margin-left: 25%;
+	background-color: var(--navbar-background-color);
+	color: white;
+	border-color: white;
+}
+
+#registerbtn:hover {
+	background-color: black;
+	color: white;
 }
 
 /*************************/
@@ -358,7 +394,7 @@ table, td, th, tr {
 	text-align: center;
 }
 
-.media {
+.media-profile {
 	border: 1px solid #999;
 	background-color: var(--navbar-background-color);
 	color: white;
@@ -396,10 +432,16 @@ table, td, th, tr {
 	right: 0;
 }
 
+#updateUserBtn {
+	margin-left: 35%;
+}
 
 /*************************/
 /*	 	  	Home 	  	 */
 /*************************/
+#adminMsg {
+	text-align: center;
+}
 
 .owl-container {
 	width: 100%;
@@ -671,6 +713,14 @@ table, td, th, tr {
 	font-size: .6rem;	
 }
 /*************************/
+/*	 	Edit Product   	 */
+/*************************/
+
+.updateDbMsg {
+	text-align: center;
+}
+
+/*************************/
 /*	 	Reg Product   	 */
 /*************************/
 
@@ -695,7 +745,7 @@ table, td, th, tr {
 /*	 	  Cart  	 	 */
 /*************************/
 
-.cart-display-image {
+#cart-display-image {
 	border:1px solid #999;
 	width: 20%;
 	height: 300px;
@@ -727,6 +777,23 @@ table, td, th, tr {
 .cart-empty-msg{
 	text-align: center;
 	padding-top: 15%;
+}
+
+#checkoutBtn {
+	width: 23%;
+}
+
+.cart-item-details {
+	letter-spacing: 1.2px;
+}
+
+.cartProdTitle > a {
+	color: black;
+	text-decoration: none;
+}
+
+.cartProdTitle > a:hover {
+	color: var(--navbar-background-color);
 }
 
 /*************************/
@@ -788,9 +855,9 @@ table, td, th, tr {
 }
 
 .rct-img{
-	width: 50%;
-	display: inline;
+	width: 30%;
 }
 .order-status-rct {
 	text-align: center;
 }
+

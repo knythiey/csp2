@@ -25,7 +25,7 @@
 				}
 			?>
 		</p>
-		<div class="container register-form">
+		<div class="container register-form p-3">
 			<form action="lib/validateUserUpdate.php" method="POST">
 				<?php foreach ($result as $key) { ?>
 				
@@ -94,7 +94,7 @@
 					<?php } ?>
 
 				<?php } ?>
-				<button class="btn btn-primary" type="submit" id="updateUserBtn" disabled>Update User Profile</button>
+				<button class="btn btn-primary my-3" type="submit" id="updateUserBtn" disabled>Update User Profile</button>
 			</form>
 		</div><!--container-->
 		<?php 

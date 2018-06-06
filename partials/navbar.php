@@ -51,15 +51,14 @@
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		          	<a class="dropdown-item" href="register.php">REGISTER</a>
-		          	<a class="dropdown-item" href="#">TRANSACTIONS</a>
-		        	<div class="dropdown-divider"></div>
 		          	<a class="dropdown-item" href="registerProduct.php">ADD ITEM</a>
-		          	<a class="dropdown-item" href="#">VIEW ALL PRODUCTS</a>
+		        	<div class="dropdown-divider"></div>
+		          	<a class="dropdown-item" href="profile.php">CONTROL PANEL</a>
 		        </div>
 	      	</li>
 	     	<?php } ?>
 
-	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1){ ?>
+	     	<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == 1 && $_SESSION['user_type'] == "user"){ ?>
 		     	<li class="nav-item">
 		        	<a class="nav-link" href="cart.php">
 		        		| <i class="fas fa-shopping-cart"></i> My Cart
@@ -79,7 +78,7 @@
 	     	<?php } ?>
 
 	     	<li class="nav-item">
-	        	<a class="nav-link" href="about.php">| About</a>
+	        	<a class="nav-link" href="#">| About</a>
 	     	</li>
 
 	    </ul>

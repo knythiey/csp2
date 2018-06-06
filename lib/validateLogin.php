@@ -5,7 +5,7 @@
 	$loginUsername = $_POST['loginUsername'];
 	$loginPassword = sha1($_POST['loginPassword']);
 
-$us_query = "UPDATE users SET user_status = 1 WHERE username = '$loginUsername' && password = '$loginPassword'";
+	$us_query = "UPDATE users SET user_status = 1 WHERE username = '$loginUsername' && password = '$loginPassword'";
 	$us_result = mysqli_query($conn, $us_query);
 	
 	$id_query = "SELECT * FROM users WHERE username = '$loginUsername' && password = '$loginPassword'";
@@ -38,6 +38,7 @@ $us_query = "UPDATE users SET user_status = 1 WHERE username = '$loginUsername' 
 
 		$_SESSION['invalid_credentials_msg'] = "";
 		$_SESSION['category'] = "";
+		$_SESSION['welcome_msg'] = "Welcome, " . $_SESSION['current_user'] . "!";
 		header("Location: ../profile.php");
 	}
 

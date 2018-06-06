@@ -3,7 +3,7 @@
 	<?php 
 		session_start();
 		function getTitle(){
-			echo "Home Page";
+			echo "Index Page";
 		}
 		require "lib/connect.php";
 	?>
@@ -18,62 +18,38 @@
 				}
 			 ?>
 		</h2>
+
+		<h6 id="adminMsg">
+			<?php
+				if(isset($_SESSION['admin_msg'])){
+					echo $_SESSION['admin_msg'];
+				} 
+			?>
+		</h6>
 		
 		<div class="container home-container">
 			<?php 
 				if(isset($_SESSION['deleteDbConfirm']) && isset($_SESSION['user_type'])){
 					if($_SESSION['user_type'] == "admin"){ ?>
-						<div class="alert alert-primary" role="alert">
-							<?php echo $_SESSION['deleteDbConfirm']; ?>
-						</div>
+						<h5><?php echo $_SESSION['deleteDbConfirm']; ?></h5>
 			<?php 	} } ?>
-
 			<h2 class="category-title">Featured Items</h2>
 			<hr>
 			<div class="container owl-container">
 				<div class="owl-featured owl-carousel owl-theme">
+			    	<?php 
+			    		$carousel_qry = "SELECT * FROM products WHERE price_each > 260";
+			    		$carousel_result = mysqli_query($conn, $carousel_qry);
+			    		foreach ($carousel_result as $car_item) {
+			    	?>
 				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/nswitchbundle.jpg" alt="">
+				    	<a href="product.php?id=<?php echo $car_item['id'] ?>"><img class="img-thumbnail" src="<?php echo $car_item['product_image'] ?>" alt="owl-carousel-image"></a>
 				    	<div class="item-caption">
-				    		<h3 class="animated fadeInLeft" id="owl-featured-prodName">Nintendo Switch Bundle</h3>
-				    		<h4 class="animated fadeInUp" id="owl-featured-prodPrice">USD $300</h4>
+				    		<h3 class="animated fadeInLeft" id="owl-featured-prodName"><?php echo $car_item['product_name'] ?></h3>
+				    		<h4 class="animated fadeInUp" id="owl-featured-prodPrice">USD $<?php echo $car_item['price_each'] ?></h4>
 				    	</div>
 				    </div>
-				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/nswitchmodysbundle.jpg" alt="">
-				    	<div class="item-caption">
-				    		<h3 class="" id="owl-featured-prodName">Mario Odyssey Bundle</h3>
-				    		<h4 class="" id="owl-featured-prodPrice">USD $350</h4>
-				    	</div>
-				    </div>
-				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/ps4bundle.png" alt="">
-				    	<div class="item-caption">
-				    		<h3 class="" id="owl-featured-prodName">PS4 Bundle</h3>
-				    		<h4 class="" id="owl-featured-prodPrice">USD $400</h4>
-				    	</div>
-				    </div>
-				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/ps4mhwbundle.jpg" alt="">
-				    	<div class="item-caption">
-				    		<h3 class="" id="owl-featured-prodName">Monster Hunter:World Bundle</h3>
-				    		<h4 class="" id="owl-featured-prodPrice">USD $399</h4>
-				    	</div>
-				    </div>
-				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/xboxoneaorigbundle.jpg" alt="">
-				    	<div class="item-caption">
-				    		<h3 class="" id="owl-featured-prodName">Assassin's Creed Bundle</h3>
-				    		<h4 class="" id="owl-featured-prodPrice">USD $370</h4>
-				    	</div>
-				    </div>
-				    <div class="item">
-				    	<img class="img-thumbnail" src="assets/img/xboxonebundle.jpg" alt="">
-				    	<div class="item-caption">
-				    		<h3 class="" id="owl-featured-prodName">Xbox One Bundle</h3>
-				    		<h4 class="" id="owl-featured-prodPrice">USD $279</h4>
-				    	</div>
-				    </div>
+					<?php } ?>
 				</div>
 			</div>
 			
@@ -101,6 +77,9 @@
 					<div class="tab-content" id="v-pills-tabContent">
 						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
 							<h2 class="category-title">Home</h2>
+							<!-- <form class="my-2">
+						      	<input class="form-control mr-sm-1" type="search" id="searchBarInput" placeholder="Search">
+						    </form>	 -->		
 							<?php include "lib/allProd.php" ?>
 						</div>
 						<?php 
@@ -120,6 +99,7 @@
 		<?php $_SESSION['deleteDbConfirm'] = "";
 			  unset($_SESSION['category']);
 			  unset($_SESSION['category_title']);
+			  unset($_SESSION['admin_msg']);
 		?>
 	</div><!--main-wrapper-->
 	<?php include "partials/footer.php"; ?>

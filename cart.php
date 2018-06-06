@@ -47,16 +47,16 @@
 							<button class="btn btn-danger" id="delete-cart-item" onclick="deleteCartItem(<?php echo $key ?>)">Delete Item</button>	
 							<ul class="list-unstyled">
 								<li class="media">
-							    	<img class="img-thumbnail img-fluid cart-display-image mr-3" src="<?php echo $prod['product_image'] ?>" alt="Product Image">
+							    	<img class="img-thumbnail img-fluid mr-3" id="cart-display-image" src="<?php echo $prod['product_image'] ?>" alt="Product Image">
 							    	<div class="media-body cart-item-details">
-							      		<h3><?php echo $prod['product_name'] ?></h3>
-							      		<h5><?php echo $prod['name'] ?></h5>
-							      		<p><?php echo $prod['description'] ?></p>
-							      		<span>Quantity Order: </span>
-							      		<input type="number" name="productQuantity" id="productQuantity<?php echo $key?>" min="0" value="<?php echo $orderQuant ?>" class="form-control productQuantityCart">
+							      		<h3 class="mb-3 cartProdTitle"><a href="product.php?id=<?php echo $key ?>"><?php echo $prod['product_name'] ?></a></h3>
+							      		<h5 class="mb-3"><?php echo $prod['name'] ?></h5>
+							      		<p class="mb-3"><?php echo $prod['description'] ?></p>
+							      		<span class="mb-3">Quantity Order: </span>
+							      		<input type="number" name="productQuantity" id="productQuantity<?php echo $key?>" min="0" value="<?php echo $orderQuant ?>" class="form-control productQuantityCart mb-3">
 							      		<button class="btn btn-primary " onclick="addToCart(<?php echo $key?>)" id="addToCart">Update Order</button>	
-							      		<h6>Product Price: $<span id="price_each<?php echo $key ?>"><?php echo $prod['price_each'] ?></span></h6>
-							      		<h6>Subtotal: $<span id="cart_prod_subtotal<?php echo $key ?>"><?php echo $orderQuant * $prod['price_each'] ?></span></h6>
+							      		<h6 class="mb-3">Product Price: $<span id="price_each<?php echo $key ?>"><?php echo $prod['price_each'] ?></span></h6>
+							      		<h6 class="mb-3">Subtotal: $<span id="cart_prod_subtotal<?php echo $key ?>"><?php echo $orderQuant * $prod['price_each'] ?></span></h6>
 							    	</div>
 							  	</li>
 							</ul>
@@ -67,16 +67,17 @@
 							}//if 0 orders, wont show in cart
 						}//foreach $cartItems  
 					?>
-					<h5 class="totalPrice">TOTAL PRICE: $
-						<span id="totalPriceCart">
-							<?php 
-								if(isset($_SESSION['totalPrice']))
-								echo $_SESSION['totalPrice'];
-								// var_dump($_SESSION['subtotal'])
-						 	?> 
-						</span> 
-					</h5>
-					<a href="checkout.php"><button class="btn btn-primary" id="checkoutBtn" disabled>Checkout</button></a>
+					<div class="clearfix">
+						<h5 class="totalPrice float-right">TOTAL PRICE: $
+							<span id="totalPriceCart">
+								<?php 
+									if(isset($_SESSION['totalPrice']))
+									echo $_SESSION['totalPrice'];
+							 	?> 
+							</span> 
+						</h5>
+					</div>
+					<a href="checkout.php" class="btn btn-primary float-right" id="checkoutBtn" disabled>Checkout</a>
 					</div>
 				</div>
 				</div>

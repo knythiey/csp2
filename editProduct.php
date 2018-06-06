@@ -15,24 +15,26 @@
 <body>
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper login-bg">
+		<?php if(isset($_SESSION['current_user']) && $_SESSION['user_status'] == "admin"){ ?>
 		<?php foreach ($result as $key) { ?>
 	
 		<div class="container registerProduct-form">
+				<p class="updateDbMsg">
+				<?php 
+				if(isset($_SESSION['productUpdatedMsg'])){
+					echo $_SESSION['productUpdatedMsg'];
+					} 
+				?>
+				</p>
+				<p class="updateDbMsg">
+				<?php 
+					if(isset($_SESSION['updatedDbConfirm'])){
+						echo $_SESSION['updatedDbConfirm'];
+					}
+				 ?>
+				</p>
 			<h2>Update Product <?php echo $key['product_name']?></h2>
 			<form action="lib/updateProduct.php" method="POST" enctype="multipart/form-data">
-				<p><?php 
-					if(isset($_SESSION['productUpdatedMsg'])){
-						echo $_SESSION['productUpdatedMsg'];
-						} 
-					?>
-				</p>
-				<p>
-					<?php 
-						if(isset($_SESSION['updatedDbConfirm'])){
-							echo $_SESSION['updatedDbConfirm'];
-						}
-					 ?>
-				</p>
 				<div class="form-group">
 					<label for="productName">Product Name:* </label>
 					<input type="text" class="form-control" name="updateProdName" id="updateProdName" value="<?php echo $key['product_name'] ?>" maxlength="255" required>
@@ -78,6 +80,10 @@
 			$_SESSION['productUpdatedMsg'] = "";
 			$_SESSION['updatedDbConfirm'] = "";
 		?>
+	<?php } else { 
+		$_SESSION['admin_msg'] = "Admin only. Access Denied";
+		header("Location: home.php");
+	} ?>
 	</div>
 	<?php include "partials/footer.php"; ?>
 <?php include "partials/foot.php"; ?>

@@ -84,7 +84,7 @@
 								</div>
 								<div class="col-md-6 col-sm-12">
 									<div id="checkout-img-cont">
-										<img src="<?php echo $key['product_image'] ?>" alt="product image" class="img-fluid img-thumbnail" id="checkout-prod-img">
+										<img src="<?php echo $key['product_image'] ?>" alt="product image" class="img-fluid img-thumbnail mb-4" id="checkout-prod-img">
 									</div>
 								</div>
 							</div>

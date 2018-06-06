@@ -75,7 +75,7 @@
 						</div>
 				<?php } ?>
 
-				<button class="btn btn-primary" type="submit" id="registerbtn">Register</button>
+				<button class="btn btn-primary my-3" type="submit" id="registerbtn">Register</button>
 			</form>
 		</div><!--container-->
 	

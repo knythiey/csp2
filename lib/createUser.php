@@ -32,6 +32,7 @@
 				$_SESSION['user_contact'] = $key['contact_number'];
 				$_SESSION['date_created'] = $key['date_created'];
 		}
+		$_SESSION['welcome_msg'] = "Registration Successful! Welcome, " . $_SESSION['current_user'] . "!"; 
 		header("Location: ../profile.php");	
 	} else {
 		$username = $_POST['createUsername'];
@@ -62,6 +63,7 @@
 				$_SESSION['date_created'] = $key['date_created'];
 				$_SESSION['user_type'] = $key['role'];
 		}
+		$_SESSION['welcome_msg'] = "Registration Successful! Welcome, " . $_SESSION['current_user'] . "!";
 		header("Location: ../profile.php");	
 	}
 	

@@ -66,7 +66,9 @@
 							<button class="btn btn-primary addCart" onclick="addToCart(<?php echo $key['id'] ?>)" id="addToCart">Add to Cart</button>
 						</div>
 						<a href="product.php?id=<?php echo $key['id'] ?>" class="btn btn-info m-1" id="productInfoBtn"><i class="far fa-eye"></i> Product Info</a>
-						<button class="btn btn-success m-1" onclick="showAddQuantity(<?php echo $key['id'] ?>)" id = "showQuantityBtn"><i class="fas fa-shopping-cart"></i> Buy</button>
+						<?php if(isset($_SESSION['current_user']) && $_SESSION['user_type'] == "user"){ ?>
+							<button class="btn btn-success m-1" onclick="showAddQuantity(<?php echo $key['id'] ?>)" id = "showQuantityBtn"><i class="fas fa-shopping-cart"></i> Buy</button>
+						<?php } ?>
 					</div>
 				</div> <!--card -->
 			</div>

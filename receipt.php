@@ -17,20 +17,20 @@
 		<h1> Receipt Page Page</h1>
 		<hr>
 		<div class="container receipt-cont">
-			<p>Thank you <?php echo $_SESSION['checkoutFname'] . " " . $_SESSION['checkoutLname'] ?> for your purchase!</p> <p>Your order is being prepared for delivery. Keep a copy of the reference number to check the status of your items.</p>
-			<p class="referenceNum-receipt">REFERENCE NUMBER: [ <span><?php echo $_SESSION['reference_number'] ?></span> ]</p>
-			<p>An Email containing the Order Details was sent to <?php echo $_SESSION['user_email'] ?>.</p>
+			<h5>Thank you <?php echo ucfirst($_SESSION['checkoutFname']) . " " . ucfirst($_SESSION['checkoutLname']) ?> for your purchase from GameHub!</h5> 
+			<h6 class="referenceNum-receipt">REFERENCE NUMBER: [ <span><?php echo $_SESSION['reference_number'] ?></span> ]
+			</h6>
 			<div class="row">
 				<?php 
-					$cust_det_query ="SELECT DISTINCT *, pay.payment_type AS pay_type 
-							FROM orders ord 
-							JOIN users u 
-							JOIN payment_type pay 
-							ON(u.id = ord.user_id 
-							&& ord.payment_id = pay.id) 
-							WHERE ord.reference_number = '$refNum'";
-					$cust_det_result = mysqli_query($conn,$cust_det_query);
-					foreach($cust_det_result as $key){
+				$cust_det_query ="SELECT DISTINCT *, pay.payment_type AS pay_type 
+						FROM orders ord 
+						JOIN users u 
+						JOIN payment_type pay 
+						ON(u.id = ord.user_id 
+						&& ord.payment_id = pay.id) 
+						WHERE ord.reference_number = '$refNum'";
+				$cust_det_result = mysqli_query($conn,$cust_det_query);
+				foreach($cust_det_result as $key){
 				?>
 				<div class="col-md-6 col-sm-12 cust-details-cont">
 					<h3>Customer Details</h3>
@@ -66,27 +66,30 @@
 						WHERE ord.reference_number = '$refNum'
 						";
 						$ord_items_result = mysqli_query($conn, $ord_items_query);
-						foreach ($ord_items_result as $key) {
+						foreach ($ord_items_result as $order) {
 					?>
-						<div class="col-md-6 col-sm-6 rct-order-items">
-							<img src="<?php echo $key['product_image']?> " alt="product_image" class="img-fluid img-thumbnail rct-img">
+					<div class="media my-2 p-2">
+						<img src="<?php echo $order['product_image']?>" alt="product_image" class="img-fluid img-thumbnail rct-img mr-3">
+						<div class="media-body">
+						    <h5 class="mt-0"><?php echo $order['product_name'] ?></h5>
+						    <h6>Quantity: <?php echo $order['quantity'] ?> pc/pcs</h6>
+						    <h6>Subtotal: USD $<?php echo $order['subtotal'] ?></h6>
 						</div>
-						<div class="col-md-6 col-sm-6 rct-order-items">
-							<p>Product name: <?php echo $key['product_name'] ?></p>
-							<p>Quantity: <?php echo $key['quantity'] ?></p>
-						</div>
+					</div>
 					<?php }//foreach $cust_det?>
 					</div>
-					<h6 class="order-status-rct">Order status: <?php echo $key['status'] ?></h6>
+					<h6 class="order-status-rct">Order status: <?php echo $order['status'] ?></h6>
+					<small>Your order is being prepared for delivery. Keep a copy of the reference number to check the status of your items.</small>
+					<small>An Email containing the Order Details was sent to <?php echo $_SESSION['user_email'] ?>.</small>
 				</div>
 			</div>
 			<a href="home.php"><button class="btn btn-primary">Back to Home</button></a>
 		</div>
 		<?php 
-			unset($_SESSION['cart']);
-			unset($_SESSION['subtotal']);
-			unset($_SESSION['itemCount']);
-			unset($_SESSION['totalPrice']);
+			// unset($_SESSION['cart']);
+			// unset($_SESSION['subtotal']);
+			// unset($_SESSION['itemCount']);
+			// unset($_SESSION['totalPrice']);
 		?>
 	</div>
 	<?php include "partials/footer.php"; ?>

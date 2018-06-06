@@ -21,9 +21,10 @@
 	$mail_subject = "Receipt of your order with order number " . $order_id;
 	$ref_num = $_SESSION['reference_number'];
 
-	$mail_body = "<p>Thank you for purchasing from Kynt's Gadgets. Here is the reference number [ " . $ref_num . " ]</p>
+	$mail_body = "
+		<p>Thank you for purchasing from GameHub. Here is the reference number [ " . $ref_num . " ]</p>
 			<br>
-			<p>This is a system generated email. Don't reply to this email. Have a good day!</p>
+		<p>This is a system generated email. Don't reply to this email. Have a good day!</p>
 		";
 	
 

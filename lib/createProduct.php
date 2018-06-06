@@ -3,7 +3,7 @@
 	require "connect.php";
 
 	//file upload
-	$target_dir = "../assets/img/product_imgs/";
+	$target_dir = "../assets/img/uploads/";
 	$target_file = $target_dir . basename($_FILES['prodImg']['name']);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 
@@ -49,7 +49,7 @@
 			$prodPrice = $_POST['prodPrice'];
 			$prodCat = $_POST['prodCat'];
 			$imgName = basename($_FILES['prodImg']['name']);
-			$target_folder = "assets/img/product_imgs/";
+			$target_folder = "assets/img/uploads/";
 			$imagePath = $target_folder . $imgName;
 			
 			$query = "INSERT INTO products(product_name, product_image, description, price_each, category_id) VALUES ('$prodName', '$imagePath', '$prodDesc', '$prodPrice', '$prodCat')";

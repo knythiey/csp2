@@ -11,8 +11,8 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		
-		<h1>Index Page</h1>
-		<p>
+		<h2>Welcome to GameHub!</h2>
+		<h5 id="nologgedin_msg">
 			<?php 
 				if(isset($_SESSION['logoutMsg'])){
 					echo $_SESSION['logoutMsg'];
@@ -22,7 +22,7 @@
 					echo "You seem lonely. Register and Login to enjoy my site!";
 				}
 			?>
-		</p>
+		</h5>
 	
 	</div>
 	<?php include "partials/footer.php"; ?>

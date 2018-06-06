@@ -7,11 +7,11 @@
 		};
 		require "lib/connect.php"; 
 		if(isset($_GET['id'])){
-		$prod_id = $_GET['id'];
-		$_SESSION['prod_id'] = $_GET['id'];
-		$prod_query = "SELECT * FROM products p JOIN categories cat WHERE p.id = '$prod_id' && p.category_id = cat.id";
-		$prod_result = mysqli_query($conn, $prod_query);
-	}
+			$prod_id = $_GET['id'];
+			$_SESSION['prod_id'] = $_GET['id'];
+			$prod_query = "SELECT *, p.id as prod_id FROM products p JOIN categories cat WHERE p.id = '$prod_id' && p.category_id = cat.id";
+			$prod_result = mysqli_query($conn, $prod_query);
+		}
 ?>
 </head>
 <body>
@@ -67,12 +67,15 @@
 					<h4>Price: <span class="product-price">US$ <?php echo $key['price_each']  ?></span></h4>
 					<?php foreach ($prod_result as $key) { ?>
 					<p>"<?php echo $key['description'] ?>"</p>
-					<h4>Reviews about <?php echo $key['product_name'] ?></h4>
-					<?php } ?>
+					<h4 class="my-2">Reviews about <?php echo $key['product_name'] ?></h4>
+					<p>Coming Soon. Feature in Development.</p>
 					<hr>
-					<input type="number" name="productQuantity" id="productQuantity<?php echo $key['id']?>" min="0" value="<?php echo $orderQuant ?>" class="form-control productQuantityCart">
-					<button class="btn btn-primary" onclick="addToCart(<?php echo $key['id']?>)" id="addToCart">Add to Cart</button>	
+					<?php } ?>
+					<?php if(isset($_SESSION['current_user']) && $_SESSION['user_type'] == "user"){ ?>
+					<input type="number" name="productQuantity" id="productQuantity<?php echo $key['prod_id']?>" min="0" class="form-control productQuantityCart">
+					<button class="btn btn-primary" onclick="addToCart(<?php echo $key['prod_id']?>)" id="addToCart">Add to Cart</button>	
 					<a href="checkout.php"><button class="btn btn-secondary" id="checkoutBtn" disabled>Checkout</button></a>
+					<?php } ?>
 					<br>
 				<?php } ?>
 				</div>

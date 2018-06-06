@@ -13,15 +13,22 @@
 	<?php include "partials/navbar.php"; ?>
 	<div class="main-wrapper">
 		<?php if(isset($_SESSION['invalid_credentials_msg'])){ ?>
-			<div id="invalid-credentials-msg">
+			<div class="container" id="invalid-credentials-msg">
 				<?php echo $_SESSION['invalid_credentials_msg']; ?>
+			</div>
+		<?php } ?>
+		<?php if(isset($_SESSION['welcome_msg'])){ ?>
+			<div class="container" id="invalid-credentials-msg">
+				<div class="alert alert-success">
+					<?php echo $_SESSION['welcome_msg']; ?>
+				</div>
 			</div>
 		<?php } ?>
 		<?php if(isset($_SESSION['current_user'])) { ?>
 		<div class="container profileCont">
 			<div class="row">
 				<div class="col-md-9 col-sm-12">
-					<div class="media p-3">
+					<div class="media media-profile p-3">
 						<?php 
 							if(isset($_SESSION['user_id']) && $_SESSION['user_status'] == 1){
 							$user_id = $_SESSION['user_id'];
@@ -195,8 +202,11 @@
 			</div>
 		</div><!-- //Modal allProductsControlPanel-->
 		<?php 
+			unset($_SESSION['invalid_credentials_msg']);
+			unset($_SESSION['welcome_msg']);
 		} else {
 			unset($_SESSION['invalid_credentials_msg']);
+			unset($_SESSION['welcome_msg']);
 			$_SESSION['invalid_credentials_msg'] = "No user logged in. Please log in first.";
 			header("Location: login.php");
 		}	

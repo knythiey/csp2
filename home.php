@@ -19,15 +19,15 @@
 			 ?>
 		</h2>
 
-		<h6 id="adminMsg">
-			<?php
-				if(isset($_SESSION['admin_msg'])){
-					echo $_SESSION['admin_msg'];
-				} 
-			?>
-		</h6>
 		
 		<div class="container home-container">
+			<h6 id="adminMsg">
+				<?php
+					if(isset($_SESSION['admin_msg'])){
+						echo $_SESSION['admin_msg'];
+					} 
+				?>
+			</h6>
 			<?php 
 				if(isset($_SESSION['deleteDbConfirm']) && isset($_SESSION['user_type'])){
 					if($_SESSION['user_type'] == "admin"){ ?>

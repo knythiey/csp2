@@ -28,38 +28,38 @@
 		
 		<div class="container product-container">
 		<h2><?php echo $key['product_name'] ?></h2>
-		<?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){ ?>
-			<div id="admin_update_prod_cont">
-				<a href="editProduct.php?id=<?php echo $prod_id ?>"><button class="btn btn-info">Update Item</button></a>
-				<a href="#confirmDelProd"><button class="btn btn-danger" id="delProdBtn" data-toggle="modal" data-target="#confirmDelProd">Delete Product</button></a>
-					<div class="modal fade" id="confirmDelProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					 	<div class="modal-dialog modal-dialog-centered" role="document">
-					    <div class="modal-content">
-					      	<div class="modal-header">
-					        <h5 class="modal-title">Confirm Deletion of <?php echo $key['product_name'] ?></h5>
-					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					          <span aria-hidden="true">&times;</span>
-					        </button>
-					      	</div>
-					     	 <div class="modal-body">
-					     	 	<form action="lib/deleteProduct.php" method="POST">
-					     	 	<h5>Input admin password:</h5>
-						        <input type="password" name="deleteProdPass" id="deleteProdPass" class="form-control" required>
-						        <button class="delProdBtn btn btn-danger mt-3" type="submit" id="deleteProdBtn">Confirm Delete</button>
-						        </form>
-					      	</div>
-					      	<div class="modal-footer">
-					        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-					      	</div>
-					    	</div>
-					 	</div>
-					</div>
-				</div>
-		<?php } ?>
 			<hr>
 			<div class="row">
 				<div class="col-md-6 col-sm-12 prod-left-cont">
 					<img src="<?php echo $key['product_image'] ?> " alt="product image" class="img-fluid prod-display-image">
+					<?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == "admin"){ ?>
+					<div id="admin_update_prod_cont">
+						<a href="#confirmDelProd"><button class="btn btn-danger" id="delProdBtn" data-toggle="modal" data-target="#confirmDelProd">Delete Product</button></a>
+						<a href="editProduct.php?id=<?php echo $prod_id ?>"><button class="btn btn-info">Update Item</button></a>
+						<div class="modal fade" id="confirmDelProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						 	<div class="modal-dialog modal-dialog-centered" role="document">
+						    <div class="modal-content">
+						      	<div class="modal-header">
+						        <h5 class="modal-title">Confirm Deletion of <?php echo $key['product_name'] ?></h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      	</div>
+						     	 <div class="modal-body">
+						     	 	<form action="lib/deleteProduct.php" method="POST">
+						     	 	<h5>Input admin password:</h5>
+							        <input type="password" name="deleteProdPass" id="deleteProdPass" class="form-control" required>
+							        <button class="delProdBtn btn btn-danger mt-3" type="submit" id="deleteProdBtn">Confirm Delete</button>
+							        </form>
+						      	</div>
+						      	<div class="modal-footer">
+						        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+						      	</div>
+						    	</div>
+						 	</div>
+						</div><!--confirm del modal-->
+					</div>
+					<?php } ?>
 				</div>
 				<div class="col-md-6 col-sm-12 prod-right-cont">
 					<h3>Category : <span  class="product-name"><?php echo $key['name'] ?></span></h3>
@@ -80,12 +80,12 @@
 				<?php } ?>
 				</div>
 			</div>
+		</div><!--product container-->
 			<hr>
-		</div>
+		</div><!--main-wrapper-->
 		<?php  
 			$_SESSION['insertDbConfirm'] = "";
 			$_SESSION['deleteDbConfirm'] = "";
 		?>
-	</div>
 	<?php include "partials/footer.php"; ?>
 <?php include "partials/foot.php"; ?>

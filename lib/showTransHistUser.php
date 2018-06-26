@@ -10,29 +10,26 @@
 	<div class="container">
 		<div class="row modalShowTransHeader">
 			<div class="col-sm-6">
-				<h3>Order Id: <?php echo $row['ord_id'] ?></h3>
+				<small>Order Id: [<?php echo $row['reference_number'] ?>]</small>
 			</div>
 			<div class="col-sm-6">
-				<h3>Total: USD $<?php echo $row['total'] ?></h3>
+				<small>Total: USD $<?php echo $row['total'] ?></small>
 			</div>
 		</div>
 	</div>
-	<?php foreach ($result as $key) { ?>
-	<table class="table table-responsive table-border">
+	<table class="table table-responsive table-striped">
 		<tr>
-			<th>Product Image</th>
 			<th>Product Name</th>
 			<th>Quantity</th>
 			<th>Subtotal</th>
 		</tr>
+	<?php foreach ($result as $key) { ?>
 		<tr>
-			<td><img src="<?php echo $key['product_image'] ?>" alt="product_image" id="showTransHistUserImg" class="img-fluid img-thumbnail"></td>
 			<td><small><?php echo $key['product_name'] ?></small></td>
 			<td><small><?php echo $key['quantity'] ?></small></td>
 			<td><small>USD $<?php echo $key['subtotal'] ?></small></td>
 		</tr>
-	</table>
 	<?php } ?>
+	</table>
 	<hr>
-	<h5 class="modalShowTransHeader">Ref Num: <small>[<?php echo $row['reference_number'] ?>]</small></h5>
 	

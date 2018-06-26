@@ -25,9 +25,9 @@
 			</div>
 		<?php } ?>
 		<?php if(isset($_SESSION['current_user'])) { ?>
-		<div class="container profileCont">
+		<div class="container">
 			<div class="row">
-				<div class="col-md-9 col-sm-12">
+				<div class="col-md-8 col-sm-12">
 					<div class="media media-profile p-3">
 						<?php 
 							if(isset($_SESSION['user_id']) && $_SESSION['user_status'] == 1){
@@ -40,7 +40,6 @@
 						<div class="media-body ml-2">
 				    	<h2>Welcome, <?php echo ucfirst($_SESSION['current_user']) ?>!</h2>
 				    	<p>Username: <?php echo $key['username']  ?></p>
-				    	<p>User ID: <?php echo $key['id'] ?></p>
 				    	<p>Email: <?php echo $key['email'] ?></p>
 				    	<p>Gender: <?php echo ucfirst($key['gender']) ?></p>
 						<p>Account Status: <?php echo ucfirst($key['status']) ?></p>

@@ -18,11 +18,11 @@
 	// Receiver
 	$to_email = "kynt.sample@gmail.com";
 	$to_name = "$userFullName";
-	$mail_subject = "Receipt of your order with order number " . $order_id;
+	$mail_subject = "Receipt of your order with order number " . $ref_num;
 	$ref_num = $_SESSION['reference_number'];
 
 	$mail_body = "
-		<p>Thank you for purchasing from GameHub. Here is the reference number [ " . $ref_num . " ]</p>
+		<p>Thank you for purchasing from GameHub.</p>
 			<br>
 		<p>This is a system generated email. Don't reply to this email. Have a good day!</p>
 		";
@@ -65,5 +65,6 @@
 	} catch (Exception $error) {
 		echo "Message couldn't be sent. Mail error" . $mail->ErrorInfo;
 	}
+	unset($_SESSION['cart'],$_SESION['subtotal'],$_SESSION['totalPrice'],$_SESSION['itemCount']);
 	header("location: ../receipt.php");
 	?>

@@ -6,7 +6,6 @@
 		function getTitle(){
 			echo "Checkout Page";
 		}
-
 	?>
 </head>
 <body>
@@ -61,8 +60,8 @@
 						</form>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-12">
-					<h3>Order Summary</h3>
+				<div class="col-md-6 col-sm-12 checkout-right-cont">
+					<h3 >Order Summary</h3>
 					<hr>
 					<?php 
 					if(isset($_SESSION['cart'])){

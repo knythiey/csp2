@@ -302,7 +302,31 @@ $(document).ready(function(){
 	//     OWL     //
 	/////////////////
 	
+	//index
+	$('#owl-index').owlCarousel({
+	center:true,
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:4,
+            loop:true,
+            nav:false
+        },
+        1000:{
+            items:4,
+            loop:true,
+            nav:false,
+        }
+    }
+	});
 
+	//home page
 	$('.owl-featured').owlCarousel({
 	    items: 1,
 	    autoplay: true,
